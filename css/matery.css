@@ -369,7 +369,7 @@ header .side-nav .social-link {
 
 .cover-btns {
     position: relative;
-    top: 10vh;
+    top: 35vh;
     text-align: center;
 }
 
@@ -502,7 +502,7 @@ header .side-nav .social-link {
 
 .cover-social-link {
     position: relative;
-    top: 23vh;
+    top: 19vh;
     width: 100%;
     text-align: center;
 }
@@ -551,8 +551,8 @@ header .go-back i {
 }
 
 .bg-cover:after {
-    -webkit-animation: rainbow 60s infinite;
-    animation: rainbow 60s infinite;
+    /* -webkit-animation: rainbow 60s infinite;
+    animation: rainbow 60s infinite; */
 }
 
 .bg-cover:before,
@@ -574,7 +574,7 @@ header .go-back i {
 }
 
 .bg-cover .title {
-    font-size: 4rem;
+    font-size: 5.5rem;
     line-height: 1.2em;
     margin-bottom: 20px;
     position: relative;
@@ -582,8 +582,8 @@ header .go-back i {
 
 .bg-cover .description {
     font-weight: 300;
-    font-size: 1.25rem;
-    line-height: 1.4em;
+    font-size: 1.5rem;
+    line-height: 2em;
     color: #eee;
 }
 
