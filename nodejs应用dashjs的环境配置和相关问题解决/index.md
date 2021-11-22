@@ -2,7 +2,6 @@
 
 
 
-
 ## 一、在服务器上安装nodejs
 
 1. 服务器os为ubuntu，因此去到[nodejs官网](https://nodejs.org/en/download/)下载对应的`node-v15.12.0-linux-x64.tar.xz`，我下载的nodejs版本为15。
@@ -99,8 +98,12 @@ export NODE_OPTIONS="--max-old-space-size=512"
 
 后续todo：dashjs上的内存泄漏都在哪里——nodejs的内存泄漏调试办法
 
+------
+
 
 
 > 后记：我后来在树莓派4B上试了试整个环境的配置，全程丝滑顺利，让我怀疑方向是否错了？
 
 <img src="https://gitee.com/tanneho/pic/raw/master/img/202111211818982.png" style="zoom: 80%;" />
+
+
