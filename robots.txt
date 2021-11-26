@@ -61,4 +61,4 @@ Disallow: /
 User-agent: ZoominfoBot
 Disallow: /
 
-Sitemap: https://neho.ink/en/sitemap.xml
+Sitemap: https://neho.ink/sitemap.xml
