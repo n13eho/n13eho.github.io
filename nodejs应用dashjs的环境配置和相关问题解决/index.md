@@ -112,11 +112,20 @@ export NODE_OPTIONS="--max-old-space-size=512"
         <img src="https://gitee.com/tanneho/pic/raw/master/img/202112022100493.png" style="zoom:80%;">  
 </div>
 
-然后修改`/etc/nginx/sites-available/default`中的
+然后修改`/etc/nginx/sites-available/default`（服务器上nginx的设置文件路径是：`/usr/local/nginx/conf/nginx.conf`）中的
 
 ```
 root /home/pi/dashjs;
 ```
 
+有时候需要再重启一下ngnix服务
+
+```bash
+sudo service nginx restart
+```
+
 这里就是nginx的站点根目录。在浏览器访问网址：[http://`ip.of.your.server`/samples/dash-if-reference-player/index.html](https://reference.dashif.org/dash.js/latest/samples/dash-if-reference-player/index.html)即可看到sample-player界面了
+
+
+
 
