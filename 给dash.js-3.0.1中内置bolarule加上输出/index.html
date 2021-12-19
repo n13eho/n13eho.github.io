@@ -1,0 +1,293 @@
+<!doctype html><html lang=zh-cn>
+<head>
+<meta charset=utf-8>
+<meta name=viewport content="width=device-width,initial-scale=1">
+<meta name=robots content="noodp">
+<meta http-equiv=x-ua-compatible content="IE=edge, chrome=1">
+<title>给dash.js 3.0.1中内置BolaRule加上输出 - n13eho's blog</title><meta name=Description content="关于 LoveIt 主题"><meta property="og:title" content="给dash.js 3.0.1中内置BolaRule加上输出">
+<meta property="og:description" content="使用自带Bola算法得到实验数据">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://neho.ink/%E7%BB%99dash.js-3.0.1%E4%B8%AD%E5%86%85%E7%BD%AEbolarule%E5%8A%A0%E4%B8%8A%E8%BE%93%E5%87%BA/"><meta property="og:image" content="https://neho.ink/classic-hh.png"><meta property="article:section" content="posts">
+<meta property="article:published_time" content="2021-12-18T15:43:27+08:00">
+<meta property="article:modified_time" content="2021-12-18T15:43:27+08:00">
+<meta name=twitter:card content="summary_large_image">
+<meta name=twitter:image content="https://neho.ink/classic-hh.png">
+<meta name=twitter:title content="给dash.js 3.0.1中内置BolaRule加上输出">
+<meta name=twitter:description content="使用自带Bola算法得到实验数据">
+<meta name=application-name content="LoveIt">
+<meta name=apple-mobile-web-app-title content="LoveIt"><meta name=theme-color content="#ffffff"><meta name=msapplication-TileColor content="#da532c"><link rel="shortcut icon" type=image/x-icon href=/favicon.ico>
+<link rel=icon type=image/png sizes=32x32 href=/favicon-32x32.png>
+<link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png><link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png><link rel=mask-icon href=/safari-pinned-tab.svg color=#5bbad5><link rel=manifest href=/site.webmanifest><link rel=canonical href=https://neho.ink/%E7%BB%99dash.js-3.0.1%E4%B8%AD%E5%86%85%E7%BD%AEbolarule%E5%8A%A0%E4%B8%8A%E8%BE%93%E5%87%BA/><link rel=prev href=https://neho.ink/%E6%B8%B8%E6%B3%B3%E4%B8%AD%E7%BA%A7%E7%8F%AD%E7%9A%84%E5%8E%86%E7%BB%83/><link rel=next href=https://neho.ink/%E5%9C%A8dashjs3.0.1%E4%B8%AD%E6%B7%BB%E5%8A%A0%E8%87%AA%E5%AE%9A%E4%B9%89abr%E7%AE%97%E6%B3%95%E5%86%85%E7%BD%AE%E7%89%88%E6%9C%AC/><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.min.css><link rel=stylesheet href=/css/style.min.css><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.13.0/css/all.min.css><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/animate.css@3.7.2/animate.min.css><script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","headline":"给dash.js 3.0.1中内置BolaRule加上输出","inLanguage":"zh-CN","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/neho.ink\/%E7%BB%99dash.js-3.0.1%E4%B8%AD%E5%86%85%E7%BD%AEbolarule%E5%8A%A0%E4%B8%8A%E8%BE%93%E5%87%BA\/"},"image":["https:\/\/neho.ink\/images\/Apple-Devices-Preview.png"],"genre":"posts","keywords":"配环境, 前端","wordcount":1103,"url":"https:\/\/neho.ink\/%E7%BB%99dash.js-3.0.1%E4%B8%AD%E5%86%85%E7%BD%AEbolarule%E5%8A%A0%E4%B8%8A%E8%BE%93%E5%87%BA\/","datePublished":"2021-12-18T15:43:27+08:00","dateModified":"2021-12-18T15:43:27+08:00","license":"This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher":{"@type":"Organization","name":"xxxx","logo":"https:\/\/neho.ink\/images\/avatar.png"},"author":{"@type":"Person","name":"n13eho"},"description":""}</script></head>
+<body header-desktop=fixed header-mobile=auto><script type=text/javascript>(window.localStorage&&localStorage.getItem('theme')?localStorage.getItem('theme')==='dark':'auto'==='auto'?window.matchMedia('(prefers-color-scheme: dark)').matches:'auto'==='dark')&&document.body.setAttribute('theme','dark')</script>
+<div id=mask></div><div class=wrapper><header class=desktop id=header-desktop>
+<div class=header-wrapper>
+<div class=header-title>
+<a href=/ title="n13eho's blog"><img class="lazyload logo" src=/svg/loading.min.svg data-src=https://img.icons8.com/material-outlined/100/000000/cool.png data-srcset="https://img.icons8.com/material-outlined/100/000000/cool.png, https://img.icons8.com/material-outlined/100/000000/cool.png 1.5x, https://img.icons8.com/material-outlined/100/000000/cool.png 2x" data-sizes=auto alt=https://img.icons8.com/material-outlined/100/000000/cool.png title=https://img.icons8.com/material-outlined/100/000000/cool.png>n13eho's blog</a>
+</div>
+<div class=menu>
+<div class=menu-inner><a class=menu-item href=/categories/> 分类 </a><a class=menu-item href=/tags/> 标签 </a><a class=menu-item href=/posts/> 所有文章 </a><a class=menu-item href=/about/> 关于 </a><span class="menu-item delimiter"></span><span class="menu-item search" id=search-desktop>
+<input type=text placeholder=搜索文章标题或内容... id=search-input-desktop>
+<a href=javascript:void(0); class="search-button search-toggle" id=search-toggle-desktop title=搜索>
+<i class="fas fa-search fa-fw"></i>
+</a>
+<a href=javascript:void(0); class="search-button search-clear" id=search-clear-desktop title=清空>
+<i class="fas fa-times-circle fa-fw"></i>
+</a>
+<span class="search-button search-loading" id=search-loading-desktop>
+<i class="fas fa-spinner fa-fw fa-spin"></i>
+</span>
+</span><a href=javascript:void(0); class="menu-item theme-switch" title=切换主题>
+<i class="fas fa-adjust fa-fw"></i>
+</a>
+</div>
+</div>
+</div>
+</header><header class=mobile id=header-mobile>
+<div class=header-container>
+<div class=header-wrapper>
+<div class=header-title>
+<a href=/ title="n13eho's blog"><img class="lazyload logo" src=/svg/loading.min.svg data-src=https://img.icons8.com/material-outlined/100/000000/cool.png data-srcset="https://img.icons8.com/material-outlined/100/000000/cool.png, https://img.icons8.com/material-outlined/100/000000/cool.png 1.5x, https://img.icons8.com/material-outlined/100/000000/cool.png 2x" data-sizes=auto alt=https://img.icons8.com/material-outlined/100/000000/cool.png title=https://img.icons8.com/material-outlined/100/000000/cool.png>n13eho's blog</a>
+</div>
+<div class=menu-toggle id=menu-toggle-mobile>
+<span></span><span></span><span></span>
+</div>
+</div>
+<div class=menu id=menu-mobile><div class=search-wrapper>
+<div class="search mobile" id=search-mobile>
+<input type=text placeholder=搜索文章标题或内容... id=search-input-mobile>
+<a href=javascript:void(0); class="search-button search-toggle" id=search-toggle-mobile title=搜索>
+<i class="fas fa-search fa-fw"></i>
+</a>
+<a href=javascript:void(0); class="search-button search-clear" id=search-clear-mobile title=清空>
+<i class="fas fa-times-circle fa-fw"></i>
+</a>
+<span class="search-button search-loading" id=search-loading-mobile>
+<i class="fas fa-spinner fa-fw fa-spin"></i>
+</span>
+</div>
+<a href=javascript:void(0); class=search-cancel id=search-cancel-mobile>
+取消
+</a>
+</div><a class=menu-item href=/categories/ title>分类</a><a class=menu-item href=/tags/ title>标签</a><a class=menu-item href=/posts/ title>所有文章</a><a class=menu-item href=/about/ title>关于</a><a href=javascript:void(0); class="menu-item theme-switch" title=切换主题>
+<i class="fas fa-adjust fa-fw"></i>
+</a></div>
+</div>
+</header>
+<div class="search-dropdown desktop">
+<div id=search-dropdown-desktop></div>
+</div>
+<div class="search-dropdown mobile">
+<div id=search-dropdown-mobile></div>
+</div>
+<main class=main>
+<div class=container><div class=toc id=toc-auto>
+<h2 class=toc-title>目录</h2>
+<div class=toc-content id=toc-content-auto></div>
+</div><article class="page single"><h1 class="single-title animated flipInX">给dash.js 3.0.1中内置BolaRule加上输出</h1><div class=post-meta>
+<div class=post-meta-line><span class=post-author><a href=neho.ink title=Author rel=" author" class=author><i class="fas fa-user-circle fa-fw"></i>n13eho</a></span>&nbsp;<span class=post-category>收录于 <a href=/categories/dash.js/><i class="far fa-folder fa-fw"></i>dash.js</a></span></div>
+<div class=post-meta-line><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime=2021-12-18>2021-12-18</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 1103 字&nbsp;
+<i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 3 分钟&nbsp;<span id=/%E7%BB%99dash.js-3.0.1%E4%B8%AD%E5%86%85%E7%BD%AEbolarule%E5%8A%A0%E4%B8%8A%E8%BE%93%E5%87%BA/ class=leancloud_visitors data-flag-title="给dash.js 3.0.1中内置BolaRule加上输出">
+<i class="far fa-eye fa-fw"></i>&nbsp;<span class=leancloud-visitors-count></span>&nbsp;次阅读
+</span>&nbsp;</div>
+</div><div class="details toc" id=toc-static kept>
+<div class="details-summary toc-title">
+<span>目录</span>
+<span><i class="details-icon fas fa-angle-right"></i></span>
+</div>
+<div class="details-content toc-content" id=toc-content-static><nav id=TableOfContents>
+<ul>
+<li><a href=#1-在树莓派上配置301所需环境>1. 在树莓派上配置3.0.1所需环境</a>
+<ul>
+<li><a href=#安装grunt>安装grunt</a></li>
+<li><a href=#gurnt装不上怎么办>gurnt装不上怎么办</a></li>
+</ul>
+</li>
+<li><a href=#2-正确添加内置bola的输出量>2. 正确添加内置Bola的输出量</a>
+<ul>
+<li><a href=#项目install准备>项目install准备</a></li>
+<li><a href=#网站上线>网站上线</a></li>
+<li><a href=#测试输出>测试输出</a></li>
+<li><a href=#添加输出量>添加输出量</a></li>
+</ul>
+</li>
+<li><a href=#上服务器>上服务器</a></li>
+</ul>
+</nav></div>
+</div><div class=content id=content><h2 id=1-在树莓派上配置301所需环境>1. 在树莓派上配置3.0.1所需环境</h2>
+<h3 id=安装grunt>安装grunt</h3>
+<p>grunt是前几年使用的一个打包工具吧，现在dashjs的项目用的是webpack了。安装grunt很简单，只需要一句</p>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-bash data-lang=bash>npm install -g grunt-cli 
+</code></pre></td></tr></table>
+</div>
+</div><p>当然需要提前配好nodejs环境。安装完之后验证</p>
+<p><img src=https://gitee.com/tanneho/pic/raw/master/img/202112181559902.png></p>
+<h3 id=gurnt装不上怎么办>gurnt装不上怎么办</h3>
+<div class="details admonition note open">
+<div class="details-summary admonition-title">
+<i class="icon fas fa-pencil-alt fa-fw"></i>注意<i class="details-icon fas fa-angle-right fa-fw"></i>
+</div>
+<div class=details-content>
+<div class=admonition-content><p>这里可能会出现找不到grunt的失败提示，那么多半是npm/bin的路径没有添加到环境变量中去。使用熟悉的</p>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-bash data-lang=bash>sudo vim /etc/profile
+</code></pre></td></tr></table>
+</div>
+</div><p>将这句话添加到结尾</p>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=nb>export</span> <span class=nv>PATH</span><span class=o>=</span>/root/nodejs/bin:<span class=nv>$PATH</span>
+</code></pre></td></tr></table>
+</div>
+</div><p><img src=https://gitee.com/tanneho/pic/raw/master/img/202112181606424.png style=zoom:67%></p>
+<p>最后记得再source一下</p>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=nb>source</span> /etc/profile
+</code></pre></td></tr></table>
+</div>
+</div></div>
+</div>
+</div>
+<p>至此环境就配好了</p>
+<h2 id=2-正确添加内置bola的输出量>2. 正确添加内置Bola的输出量</h2>
+<h3 id=项目install准备>项目install准备</h3>
+<p><a href=https://github.com/Dash-Industry-Forum/dash.js/tree/v3.0.1#quick-start-for-developers target=_blank rel="noopener noreffer">官方文档</a>说的很清楚，这里过一遍</p>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-bash data-lang=bash>npm install <span class=c1># 注意这一步是必须要求grunt时已经安装好了的，否则就会一直被一个超时问题给卡住🙄</span>
+grunt debug
+</code></pre></td></tr></table>
+</div>
+</div><p><img class=lazyload src=/svg/loading.min.svg data-src=https://gitee.com/tanneho/pic/raw/master/img/202112181625688.png data-srcset="https://gitee.com/tanneho/pic/raw/master/img/202112181625688.png, https://gitee.com/tanneho/pic/raw/master/img/202112181625688.png 1.5x, https://gitee.com/tanneho/pic/raw/master/img/202112181625688.png 2x" data-sizes=auto alt=https://gitee.com/tanneho/pic/raw/master/img/202112181625688.png title=https://gitee.com/tanneho/pic/raw/master/img/202112181625688.png></p>
+<p>用grunt dev可以看得到我们的html目录在哪里</p>
+<p><img class=lazyload src=/svg/loading.min.svg data-src=https://gitee.com/tanneho/pic/raw/master/img/202112181628209.png data-srcset="https://gitee.com/tanneho/pic/raw/master/img/202112181628209.png, https://gitee.com/tanneho/pic/raw/master/img/202112181628209.png 1.5x, https://gitee.com/tanneho/pic/raw/master/img/202112181628209.png 2x" data-sizes=auto alt=https://gitee.com/tanneho/pic/raw/master/img/202112181628209.png title=https://gitee.com/tanneho/pic/raw/master/img/202112181628209.png></p>
+<h3 id=网站上线>网站上线</h3>
+<p>通过一些顺藤摸瓜，可以得到访问目标是<code>http://192.168.1.167:3002/samples/dash-if-reference-player/index.html</code>，因此就应该把ngnix网站根目录改为当前的dashjs-301就好了</p>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-bash data-lang=bash>sudo vim /etc/nginx/sites-available/default <span class=c1># root /home/pi/dashjs-301;</span>
+sudo service nginx restart
+</code></pre></td></tr></table>
+</div>
+</div><p>访问<code>http://192.168.1.167/samples/dash-if-reference-player/index.html</code>即可</p>
+<p>完了之后把获取视频的地址改为http://10.61.140.191:3456/video-src/bbb-4s-an.mpd，这里用路由器做了一些端口转发，直接访问的是路由器的ip。（用内网突然访问不到了，所以换成这个</p>
+<h3 id=测试输出>测试输出</h3>
+<p>这里就随便在/src/streaming/rules/abr/BolaRule.js中输出一些东西，打包，运行即可。验证的确是执行了Bola算法了的即可。</p>
+<p><img class=lazyload src=/svg/loading.min.svg data-src=https://gitee.com/tanneho/pic/raw/master/img/202112182237372.png data-srcset="https://gitee.com/tanneho/pic/raw/master/img/202112182237372.png, https://gitee.com/tanneho/pic/raw/master/img/202112182237372.png 1.5x, https://gitee.com/tanneho/pic/raw/master/img/202112182237372.png 2x" data-sizes=auto alt=https://gitee.com/tanneho/pic/raw/master/img/202112182237372.png title=https://gitee.com/tanneho/pic/raw/master/img/202112182237372.png></p>
+<h3 id=添加输出量>添加输出量</h3>
+<div class="details admonition note open">
+<div class="details-summary admonition-title">
+<i class="icon fas fa-pencil-alt fa-fw"></i>注意<i class="details-icon fas fa-angle-right fa-fw"></i>
+</div>
+<div class=details-content>
+<div class=admonition-content><p>这里放另外一篇（《在dash.js 3.0.1中添加自定义ABR算法——内置版本》）的子标题的链接：让面板选项对应的ABR算法是唯一生效/工作的算法</p>
+<p>前提：让工作的只有BolaRule唯一一个内置算法，因为原生的dashjs的内置算法是混合着算的，详见<a href="https://blog.csdn.net/LvGreat/article/details/103735968?spm=1001.2014.3001.5501" target=_blank rel="noopener noreffer">这篇</a></p>
+</div>
+</div>
+</div>
+<p>然后进行这些物理量的输出：</p>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-javascript data-lang=javascript><span class=cm>/**Parameters
+</span><span class=cm> * @param {string} mediaType mediaType - 
+</span><span class=cm> * @param {number} last_last_bitrate bolaState.lastQuality - 上一次选择的quality
+</span><span class=cm> * @param {number} bufferLevel bufferLevel - [call dashMetric API]
+</span><span class=cm> * @param {number} latency latency_cus - [call dashMetric API] the time in seconds from request of segment to receipt of first byte
+</span><span class=cm> * @param {number} downloadTime downloadTime - the time in seconds from first byte being received to the last byte
+</span><span class=cm> * @param {number} idleTime idleTime - ?
+</span><span class=cm> * @param {number} rebufferTime rebufferTime - 
+</span><span class=cm> * @param {number} chunkSize chunkSize - 
+</span><span class=cm> * @param {number} throughput throughput_cus - 
+</span><span class=cm> * @param {number} app_throughput app_throughput - 
+</span><span class=cm> * @param {number} time_request time_request - 
+</span><span class=cm> * @param {number} time_response time_response - 
+</span><span class=cm> * @param {number} time_finish time_finish - 
+</span><span class=cm> * @param {number} cur_reward cur_reward - QoE
+</span><span class=cm> */</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>检查一下输出来的chunksize是否正常，这个版本的fastSwitch是没有bug的</p>
+<h2 id=上服务器>上服务器</h2>
+<p>树莓派上都能跑了的话，就把这一套搬到Ubuntu服务器上去。</p>
+</div><div class=post-footer id=post-footer>
+<div class=post-info>
+<div class=post-info-line>
+<div class=post-info-mod>
+<span>更新于 2021-12-18</span>
+</div>
+<div class=post-info-license><span><a rel="license external nofollow noopener noreffer" href=https://creativecommons.org/licenses/by-nc/4.0/ target=_blank>CC BY-NC 4.0</a></span></div>
+</div>
+<div class=post-info-line>
+<div class=post-info-md><span>
+<a class=link-to-markdown href=/%E7%BB%99dash.js-3.0.1%E4%B8%AD%E5%86%85%E7%BD%AEbolarule%E5%8A%A0%E4%B8%8A%E8%BE%93%E5%87%BA/index.md target=_blank>阅读原始文档</a>
+</span></div>
+<div class=post-info-share>
+<span><a href=javascript:void(0); title="分享到 Twitter" data-sharer=twitter data-url=https://neho.ink/%E7%BB%99dash.js-3.0.1%E4%B8%AD%E5%86%85%E7%BD%AEbolarule%E5%8A%A0%E4%B8%8A%E8%BE%93%E5%87%BA/ data-title="给dash.js 3.0.1中内置BolaRule加上输出" data-hashtags=配环境,前端><i class="fab fa-twitter fa-fw"></i></a><a href=javascript:void(0); title="分享到 Facebook" data-sharer=facebook data-url=https://neho.ink/%E7%BB%99dash.js-3.0.1%E4%B8%AD%E5%86%85%E7%BD%AEbolarule%E5%8A%A0%E4%B8%8A%E8%BE%93%E5%87%BA/ data-hashtag=配环境><i class="fab fa-facebook-square fa-fw"></i></a><a href=javascript:void(0); title="分享到 Hacker News" data-sharer=hackernews data-url=https://neho.ink/%E7%BB%99dash.js-3.0.1%E4%B8%AD%E5%86%85%E7%BD%AEbolarule%E5%8A%A0%E4%B8%8A%E8%BE%93%E5%87%BA/ data-title="给dash.js 3.0.1中内置BolaRule加上输出"><i class="fab fa-hacker-news fa-fw"></i></a><a href=javascript:void(0); title="分享到 Line" data-sharer=line data-url=https://neho.ink/%E7%BB%99dash.js-3.0.1%E4%B8%AD%E5%86%85%E7%BD%AEbolarule%E5%8A%A0%E4%B8%8A%E8%BE%93%E5%87%BA/ data-title="给dash.js 3.0.1中内置BolaRule加上输出"><i data-svg-src=https://cdn.jsdelivr.net/npm/simple-icons@2.14.0/icons/line.svg></i></a><a href=javascript:void(0); title="分享到 微博" data-sharer=weibo data-url=https://neho.ink/%E7%BB%99dash.js-3.0.1%E4%B8%AD%E5%86%85%E7%BD%AEbolarule%E5%8A%A0%E4%B8%8A%E8%BE%93%E5%87%BA/ data-title="给dash.js 3.0.1中内置BolaRule加上输出"><i class="fab fa-weibo fa-fw"></i></a></span>
+</div>
+</div>
+</div>
+<div class=post-info-more>
+<section class=post-tags><i class="fas fa-tags fa-fw"></i>&nbsp;<a href=/tags/%E9%85%8D%E7%8E%AF%E5%A2%83/>配环境</a>,&nbsp;<a href=/tags/%E5%89%8D%E7%AB%AF/>前端</a></section>
+<section>
+<span><a href=javascript:void(0); onclick=window.history.back()>返回</a></span>&nbsp;|&nbsp;<span><a href=/>主页</a></span>
+</section>
+</div>
+<div class=post-nav><a href=/%E6%B8%B8%E6%B3%B3%E4%B8%AD%E7%BA%A7%E7%8F%AD%E7%9A%84%E5%8E%86%E7%BB%83/ class=prev rel=prev title=游泳中级班的历练><i class="fas fa-angle-left fa-fw"></i>游泳中级班的历练</a>
+<a href=/%E5%9C%A8dashjs3.0.1%E4%B8%AD%E6%B7%BB%E5%8A%A0%E8%87%AA%E5%AE%9A%E4%B9%89abr%E7%AE%97%E6%B3%95%E5%86%85%E7%BD%AE%E7%89%88%E6%9C%AC/ class=next rel=next title="在dash.js 3.0.1中添加自定义ABR算法——内置版本">在dash.js 3.0.1中添加自定义ABR算法——内置版本<i class="fas fa-angle-right fa-fw"></i></a></div>
+</div>
+<div id=comments><div id=valine class=comment></div><noscript>
+Please enable JavaScript to view the comments powered by <a href=https://valine.js.org/>Valine</a>.
+</noscript></div></article></div>
+</main><footer class=footer>
+<div class=footer-container><div class=footer-line>由 <a href=https://gohugo.io/ target=_blank rel="noopener noreffer" title="Hugo 0.88.1">Hugo</a> 强力驱动 | 主题 - <a href=https://github.com/dillonzq/LoveIt target=_blank rel="noopener noreffer" title="LoveIt 0.2.10"><i class="far fa-kiss-wink-heart fa-fw"></i> LoveIt</a>
+</div><div class=footer-line><i class="far fa-copyright fa-fw"></i><span itemprop=copyrightYear>2021</span><span class=author itemprop=copyrightHolder>&nbsp;<a href=neho.ink target=_blank>n13eho</a></span>&nbsp;|&nbsp;<span class=license><a rel="license external nofollow noopener noreffer" href=https://creativecommons.org/licenses/by-nc/4.0/ target=_blank>CC BY-NC 4.0</a></span></div>
+</div>
+</footer></div>
+<div id=fixed-buttons><a href=# id=back-to-top class=fixed-button title=回到顶部>
+<i class="fas fa-arrow-up fa-fw"></i>
+</a><a href=# id=view-comments class=fixed-button title=查看评论>
+<i class="fas fa-comment fa-fw"></i>
+</a>
+</div><link rel=stylesheet href=/lib/valine/valine.min.css><script type=text/javascript src=https://cdn.jsdelivr.net/npm/valine@1.4.14/dist/Valine.min.js></script><script type=text/javascript src=https://cdn.jsdelivr.net/npm/smooth-scroll@16.1.3/dist/smooth-scroll.min.js></script><script type=text/javascript src=https://cdn.jsdelivr.net/npm/autocomplete.js@0.37.1/dist/autocomplete.min.js></script><script type=text/javascript src=https://cdn.jsdelivr.net/npm/algoliasearch@4.2.0/dist/algoliasearch-lite.umd.min.js></script><script type=text/javascript src=https://cdn.jsdelivr.net/npm/lazysizes@5.2.2/lazysizes.min.js></script><script type=text/javascript src=https://cdn.jsdelivr.net/npm/clipboard@2.0.6/dist/clipboard.min.js></script><script type=text/javascript src=https://cdn.jsdelivr.net/npm/sharer.js@0.4.0/sharer.min.js></script><script type=text/javascript>window.config={code:{copyTitle:"复制到剪贴板",maxShownLines:10},comment:{valine:{appId:"QGzwQXOqs5JOhN4RGPOkR2mR-MdYXbMMI",appKey:"WBmoGyJtbqUswvfLh6L8iEBr",avatar:"mp",el:"#valine",emojiCDN:"https://cdn.jsdelivr.net/npm/emoji-datasource-google@5.0.1/img/google/64/",emojiMaps:{100:"1f4af.png",alien:"1f47d.png",anger:"1f4a2.png",angry:"1f620.png",anguished:"1f627.png",astonished:"1f632.png",black_heart:"1f5a4.png",blue_heart:"1f499.png",blush:"1f60a.png",bomb:"1f4a3.png",boom:"1f4a5.png",broken_heart:"1f494.png",brown_heart:"1f90e.png",clown_face:"1f921.png",cold_face:"1f976.png",cold_sweat:"1f630.png",confounded:"1f616.png",confused:"1f615.png",cry:"1f622.png",crying_cat_face:"1f63f.png",cupid:"1f498.png",dash:"1f4a8.png",disappointed:"1f61e.png",disappointed_relieved:"1f625.png",dizzy:"1f4ab.png",dizzy_face:"1f635.png",drooling_face:"1f924.png",exploding_head:"1f92f.png",expressionless:"1f611.png",face_vomiting:"1f92e.png",face_with_cowboy_hat:"1f920.png",face_with_hand_over_mouth:"1f92d.png",face_with_head_bandage:"1f915.png",face_with_monocle:"1f9d0.png",face_with_raised_eyebrow:"1f928.png",face_with_rolling_eyes:"1f644.png",face_with_symbols_on_mouth:"1f92c.png",face_with_thermometer:"1f912.png",fearful:"1f628.png",flushed:"1f633.png",frowning:"1f626.png",ghost:"1f47b.png",gift_heart:"1f49d.png",green_heart:"1f49a.png",grimacing:"1f62c.png",grin:"1f601.png",grinning:"1f600.png",hankey:"1f4a9.png",hear_no_evil:"1f649.png",heart:"2764-fe0f.png",heart_decoration:"1f49f.png",heart_eyes:"1f60d.png",heart_eyes_cat:"1f63b.png",heartbeat:"1f493.png",heartpulse:"1f497.png",heavy_heart_exclamation_mark_ornament:"2763-fe0f.png",hole:"1f573-fe0f.png",hot_face:"1f975.png",hugging_face:"1f917.png",hushed:"1f62f.png",imp:"1f47f.png",innocent:"1f607.png",japanese_goblin:"1f47a.png",japanese_ogre:"1f479.png",joy:"1f602.png",joy_cat:"1f639.png",kiss:"1f48b.png",kissing:"1f617.png",kissing_cat:"1f63d.png",kissing_closed_eyes:"1f61a.png",kissing_heart:"1f618.png",kissing_smiling_eyes:"1f619.png",laughing:"1f606.png",left_speech_bubble:"1f5e8-fe0f.png",love_letter:"1f48c.png",lying_face:"1f925.png",mask:"1f637.png",money_mouth_face:"1f911.png",nauseated_face:"1f922.png",nerd_face:"1f913.png",neutral_face:"1f610.png",no_mouth:"1f636.png",open_mouth:"1f62e.png",orange_heart:"1f9e1.png",partying_face:"1f973.png",pensive:"1f614.png",persevere:"1f623.png",pleading_face:"1f97a.png",pouting_cat:"1f63e.png",purple_heart:"1f49c.png",rage:"1f621.png",relaxed:"263a-fe0f.png",relieved:"1f60c.png",revolving_hearts:"1f49e.png",right_anger_bubble:"1f5ef-fe0f.png",robot_face:"1f916.png",rolling_on_the_floor_laughing:"1f923.png",scream:"1f631.png",scream_cat:"1f640.png",see_no_evil:"1f648.png",shushing_face:"1f92b.png",skull:"1f480.png",skull_and_crossbones:"2620-fe0f.png",sleeping:"1f634.png",sleepy:"1f62a.png",slightly_frowning_face:"1f641.png",slightly_smiling_face:"1f642.png",smile:"1f604.png",smile_cat:"1f638.png",smiley:"1f603.png",smiley_cat:"1f63a.png",smiling_face_with_3_hearts:"1f970.png",smiling_imp:"1f608.png",smirk:"1f60f.png",smirk_cat:"1f63c.png",sneezing_face:"1f927.png",sob:"1f62d.png",space_invader:"1f47e.png",sparkling_heart:"1f496.png",speak_no_evil:"1f64a.png",speech_balloon:"1f4ac.png","star-struck":"1f929.png",stuck_out_tongue:"1f61b.png",stuck_out_tongue_closed_eyes:"1f61d.png",stuck_out_tongue_winking_eye:"1f61c.png",sunglasses:"1f60e.png",sweat:"1f613.png",sweat_drops:"1f4a6.png",sweat_smile:"1f605.png",thinking_face:"1f914.png",thought_balloon:"1f4ad.png",tired_face:"1f62b.png",triumph:"1f624.png",two_hearts:"1f495.png",unamused:"1f612.png",upside_down_face:"1f643.png",weary:"1f629.png",white_frowning_face:"2639-fe0f.png",white_heart:"1f90d.png",wink:"1f609.png",woozy_face:"1f974.png",worried:"1f61f.png",yawning_face:"1f971.png",yellow_heart:"1f49b.png",yum:"1f60b.png",zany_face:"1f92a.png",zipper_mouth_face:"1f910.png",zzz:"1f4a4.png"},enableQQ:!1,highlight:!0,lang:"zh-cn",pageSize:10,placeholder:"你的评论 ...",recordIP:!0,serverURLs:"https://leancloud.hugoloveit.com",visitor:!0}},search:{algoliaAppID:"PASDMWALPK",algoliaIndex:"index.zh-cn",algoliaSearchKey:"b42948e51daaa93df92381c8e2ac0f93",highlightTag:"em",maxResultLength:10,noResultsFound:"没有找到结果",snippetLength:50,type:"algolia"}}</script><script type=text/javascript src=/js/theme.min.js></script></body>
+</html>
