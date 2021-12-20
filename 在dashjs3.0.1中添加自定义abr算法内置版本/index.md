@@ -3,7 +3,7 @@
 
 师兄之前已经写过了在CustomRules那边[添加自定义ABR算法](https://blog.csdn.net/LvGreat/article/details/114790362?spm=1001.2014.3001.5502)的文章，并且能够用。这里从它内置的入手，看下能否做到
 
-## 让面板选项对应的ABR算法是唯一生效/工作的算法
+## 1. 让面板选项对应的ABR算法是唯一生效/工作的算法
 
 ### 先看看dashjs默认调用的ABR逻辑
 
@@ -81,8 +81,10 @@ function initialize() {
 }
 ```
 
-那么就依据面板选择，重写这里的逻辑
+那么就依据面板选择，重写这里的逻辑。v3.0.1也是通过修改setting进行设定的，这里的接口是：settings.get().streaming.abr.ABRStrategy，类型是字符串。因此可以做一个简单的判断语句，按情况向这个list中放入rules
 
+![](https://gitee.com/tanneho/pic/raw/master/img/202112191515653.png)
 
+这样可以确保rules执行的唯一性
 
-## 🧐仿照内置格式写一个rule放进去（later）
+## 2. 🧐仿照内置格式写一个rule放进去（later）

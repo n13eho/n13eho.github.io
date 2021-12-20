@@ -17,7 +17,7 @@
 <meta name=application-name content="LoveIt">
 <meta name=apple-mobile-web-app-title content="LoveIt"><meta name=theme-color content="#ffffff"><meta name=msapplication-TileColor content="#da532c"><link rel="shortcut icon" type=image/x-icon href=/favicon.ico>
 <link rel=icon type=image/png sizes=32x32 href=/favicon-32x32.png>
-<link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png><link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png><link rel=mask-icon href=/safari-pinned-tab.svg color=#5bbad5><link rel=manifest href=/site.webmanifest><link rel=canonical href=https://neho.ink/%E7%BB%99dash.js-3.0.1%E4%B8%AD%E5%86%85%E7%BD%AEbolarule%E5%8A%A0%E4%B8%8A%E8%BE%93%E5%87%BA/><link rel=prev href=https://neho.ink/%E6%B8%B8%E6%B3%B3%E4%B8%AD%E7%BA%A7%E7%8F%AD%E7%9A%84%E5%8E%86%E7%BB%83/><link rel=next href=https://neho.ink/%E5%9C%A8dashjs3.0.1%E4%B8%AD%E6%B7%BB%E5%8A%A0%E8%87%AA%E5%AE%9A%E4%B9%89abr%E7%AE%97%E6%B3%95%E5%86%85%E7%BD%AE%E7%89%88%E6%9C%AC/><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.min.css><link rel=stylesheet href=/css/style.min.css><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.13.0/css/all.min.css><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/animate.css@3.7.2/animate.min.css><script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","headline":"给dash.js 3.0.1中内置BolaRule加上输出","inLanguage":"zh-CN","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/neho.ink\/%E7%BB%99dash.js-3.0.1%E4%B8%AD%E5%86%85%E7%BD%AEbolarule%E5%8A%A0%E4%B8%8A%E8%BE%93%E5%87%BA\/"},"image":["https:\/\/neho.ink\/images\/Apple-Devices-Preview.png"],"genre":"posts","keywords":"配环境, 前端","wordcount":1103,"url":"https:\/\/neho.ink\/%E7%BB%99dash.js-3.0.1%E4%B8%AD%E5%86%85%E7%BD%AEbolarule%E5%8A%A0%E4%B8%8A%E8%BE%93%E5%87%BA\/","datePublished":"2021-12-18T15:43:27+08:00","dateModified":"2021-12-18T15:43:27+08:00","license":"This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher":{"@type":"Organization","name":"xxxx","logo":"https:\/\/neho.ink\/images\/avatar.png"},"author":{"@type":"Person","name":"n13eho"},"description":""}</script></head>
+<link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png><link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png><link rel=mask-icon href=/safari-pinned-tab.svg color=#5bbad5><link rel=manifest href=/site.webmanifest><link rel=canonical href=https://neho.ink/%E7%BB%99dash.js-3.0.1%E4%B8%AD%E5%86%85%E7%BD%AEbolarule%E5%8A%A0%E4%B8%8A%E8%BE%93%E5%87%BA/><link rel=prev href=https://neho.ink/%E6%B8%B8%E6%B3%B3%E4%B8%AD%E7%BA%A7%E7%8F%AD%E7%9A%84%E5%8E%86%E7%BB%83/><link rel=next href=https://neho.ink/%E5%9C%A8dashjs3.0.1%E4%B8%AD%E6%B7%BB%E5%8A%A0%E8%87%AA%E5%AE%9A%E4%B9%89abr%E7%AE%97%E6%B3%95%E5%86%85%E7%BD%AE%E7%89%88%E6%9C%AC/><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.min.css><link rel=stylesheet href=/css/style.min.css><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.13.0/css/all.min.css><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/animate.css@3.7.2/animate.min.css><script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","headline":"给dash.js 3.0.1中内置BolaRule加上输出","inLanguage":"zh-CN","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/neho.ink\/%E7%BB%99dash.js-3.0.1%E4%B8%AD%E5%86%85%E7%BD%AEbolarule%E5%8A%A0%E4%B8%8A%E8%BE%93%E5%87%BA\/"},"image":["https:\/\/neho.ink\/images\/Apple-Devices-Preview.png"],"genre":"posts","keywords":"配环境, 前端","wordcount":1413,"url":"https:\/\/neho.ink\/%E7%BB%99dash.js-3.0.1%E4%B8%AD%E5%86%85%E7%BD%AEbolarule%E5%8A%A0%E4%B8%8A%E8%BE%93%E5%87%BA\/","datePublished":"2021-12-18T15:43:27+08:00","dateModified":"2021-12-18T15:43:27+08:00","license":"This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher":{"@type":"Organization","name":"xxxx","logo":"https:\/\/neho.ink\/images\/avatar.png"},"author":{"@type":"Person","name":"n13eho"},"description":""}</script></head>
 <body header-desktop=fixed header-mobile=auto><script type=text/javascript>(window.localStorage&&localStorage.getItem('theme')?localStorage.getItem('theme')==='dark':'auto'==='auto'?window.matchMedia('(prefers-color-scheme: dark)').matches:'auto'==='dark')&&document.body.setAttribute('theme','dark')</script>
 <div id=mask></div><div class=wrapper><header class=desktop id=header-desktop>
 <div class=header-wrapper>
@@ -85,7 +85,7 @@
 <div class=toc-content id=toc-content-auto></div>
 </div><article class="page single"><h1 class="single-title animated flipInX">给dash.js 3.0.1中内置BolaRule加上输出</h1><div class=post-meta>
 <div class=post-meta-line><span class=post-author><a href=neho.ink title=Author rel=" author" class=author><i class="fas fa-user-circle fa-fw"></i>n13eho</a></span>&nbsp;<span class=post-category>收录于 <a href=/categories/dash.js/><i class="far fa-folder fa-fw"></i>dash.js</a></span></div>
-<div class=post-meta-line><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime=2021-12-18>2021-12-18</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 1103 字&nbsp;
+<div class=post-meta-line><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime=2021-12-18>2021-12-18</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 1413 字&nbsp;
 <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 3 分钟&nbsp;<span id=/%E7%BB%99dash.js-3.0.1%E4%B8%AD%E5%86%85%E7%BD%AEbolarule%E5%8A%A0%E4%B8%8A%E8%BE%93%E5%87%BA/ class=leancloud_visitors data-flag-title="给dash.js 3.0.1中内置BolaRule加上输出">
 <i class="far fa-eye fa-fw"></i>&nbsp;<span class=leancloud-visitors-count></span>&nbsp;次阅读
 </span>&nbsp;</div>
@@ -110,7 +110,8 @@
 <li><a href=#添加输出量>添加输出量</a></li>
 </ul>
 </li>
-<li><a href=#上服务器>上服务器</a></li>
+<li><a href=#3-usebufferoccupancyabr>3. useBufferOccupancyABR</a></li>
+<li><a href=#4-上服务器later>4. 上服务器（later）</a></li>
 </ul>
 </nav></div>
 </div><div class=content id=content><h2 id=1-在树莓派上配置301所需环境>1. 在树莓派上配置3.0.1所需环境</h2>
@@ -196,16 +197,14 @@ sudo service nginx restart
 <p>完了之后把获取视频的地址改为http://10.61.140.191:3456/video-src/bbb-4s-an.mpd，这里用路由器做了一些端口转发，直接访问的是路由器的ip。（用内网突然访问不到了，所以换成这个</p>
 <h3 id=测试输出>测试输出</h3>
 <p>这里就随便在/src/streaming/rules/abr/BolaRule.js中输出一些东西，打包，运行即可。验证的确是执行了Bola算法了的即可。</p>
-<p><img class=lazyload src=/svg/loading.min.svg data-src=https://gitee.com/tanneho/pic/raw/master/img/202112182237372.png data-srcset="https://gitee.com/tanneho/pic/raw/master/img/202112182237372.png, https://gitee.com/tanneho/pic/raw/master/img/202112182237372.png 1.5x, https://gitee.com/tanneho/pic/raw/master/img/202112182237372.png 2x" data-sizes=auto alt=https://gitee.com/tanneho/pic/raw/master/img/202112182237372.png title=https://gitee.com/tanneho/pic/raw/master/img/202112182237372.png></p>
+<p><img src=https://gitee.com/tanneho/pic/raw/master/img/202112182237372.png></p>
 <h3 id=添加输出量>添加输出量</h3>
 <div class="details admonition note open">
 <div class="details-summary admonition-title">
 <i class="icon fas fa-pencil-alt fa-fw"></i>注意<i class="details-icon fas fa-angle-right fa-fw"></i>
 </div>
 <div class=details-content>
-<div class=admonition-content><p>这里放另外一篇（《在dash.js 3.0.1中添加自定义ABR算法——内置版本》）的子标题的链接：让面板选项对应的ABR算法是唯一生效/工作的算法</p>
-<p>前提：让工作的只有BolaRule唯一一个内置算法，因为原生的dashjs的内置算法是混合着算的，详见<a href="https://blog.csdn.net/LvGreat/article/details/103735968?spm=1001.2014.3001.5501" target=_blank rel="noopener noreffer">这篇</a></p>
-</div>
+<div class=admonition-content>前提：让工作的<a href=https://neho.ink/%E5%9C%A8dashjs3.0.1%E4%B8%AD%E6%B7%BB%E5%8A%A0%E8%87%AA%E5%AE%9A%E4%B9%89abr%E7%AE%97%E6%B3%95%E5%86%85%E7%BD%AE%E7%89%88%E6%9C%AC/#%E6%8C%89%E9%80%89%E6%8B%A9%E4%BF%AE%E6%94%B9qualityswitchrules target=_blank rel="noopener noreffer">只有BolaRule唯一一个内置算法</a>，因为原生的dashjs的内置算法是混合着算的，详见<a href="https://blog.csdn.net/LvGreat/article/details/103735968?spm=1001.2014.3001.5501" target=_blank rel="noopener noreffer">这篇</a></div>
 </div>
 </div>
 <p>然后进行这些物理量的输出：</p>
@@ -248,7 +247,27 @@ sudo service nginx restart
 </code></pre></td></tr></table>
 </div>
 </div><p>检查一下输出来的chunksize是否正常，这个版本的fastSwitch是没有bug的</p>
-<h2 id=上服务器>上服务器</h2>
+<h2 id=3-usebufferoccupancyabr>3. useBufferOccupancyABR</h2>
+<p>加上输出，跑了很多遍之后发现，每次输出来的chunksize大小块都是从index=4开始的，前四个块的信息并没有打印出来。但是肯定是下载了的。这一次的chunkerror原因不再是fastSwitch，我想了想，并没有执行到输出语句，那么一定是提前退出了。就这样排查到了<code>useBufferOccupancyABR</code>这个地方。</p>
+<p><img src=https://gitee.com/tanneho/pic/raw/master/img/202112202203966.png></p>
+<p>这个地方从rulesContext中取出了<code>useBufferOccupancyABR</code>这个setting中的布尔值</p>
+<p><img src=https://gitee.com/tanneho/pic/raw/master/img/202112202207457.png></p>
+<p>该变量在setting中的含义是：是否使用BOLA这个abr策略，默认值为false。</p>
+<p><img class=lazyload src=/svg/loading.min.svg data-src=https://gitee.com/tanneho/pic/raw/master/img/202112202212376.png data-srcset="https://gitee.com/tanneho/pic/raw/master/img/202112202212376.png, https://gitee.com/tanneho/pic/raw/master/img/202112202212376.png 1.5x, https://gitee.com/tanneho/pic/raw/master/img/202112202212376.png 2x" data-sizes=auto alt=https://gitee.com/tanneho/pic/raw/master/img/202112202212376.png title=https://gitee.com/tanneho/pic/raw/master/img/202112202212376.png></p>
+<p>我用的就是BOLA，它为false就很不合理。因此我直接把这句return注释掉了（逃🏃‍</p>
+<div class="details admonition question open">
+<div class="details-summary admonition-title">
+<i class="icon fas fa-question-circle fa-fw"></i>问题<i class="details-icon fas fa-angle-right fa-fw"></i>
+</div>
+<div class=details-content>
+<div class=admonition-content><ol>
+<li>为什么使用BolaRule，但是却默认这个变量初始值为<strong>false</strong>？</li>
+<li>那么到后面进行了前四个chunk下载之后，这个值变为<strong>true</strong>了？</li>
+</ol>
+</div>
+</div>
+</div>
+<h2 id=4-上服务器later>4. 上服务器（later）</h2>
 <p>树莓派上都能跑了的话，就把这一套搬到Ubuntu服务器上去。</p>
 </div><div class=post-footer id=post-footer>
 <div class=post-info>

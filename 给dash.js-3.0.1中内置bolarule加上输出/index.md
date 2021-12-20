@@ -77,15 +77,13 @@ sudo service nginx restart
 
 这里就随便在/src/streaming/rules/abr/BolaRule.js中输出一些东西，打包，运行即可。验证的确是执行了Bola算法了的即可。
 
-![](https://gitee.com/tanneho/pic/raw/master/img/202112182237372.png)
+<img src="https://gitee.com/tanneho/pic/raw/master/img/202112182237372.png"  />
 
 ### 添加输出量
 
 {{< admonition >}}
 
-这里放另外一篇（《在dash.js 3.0.1中添加自定义ABR算法——内置版本》）的子标题的链接：让面板选项对应的ABR算法是唯一生效/工作的算法
-
-前提：让工作的只有BolaRule唯一一个内置算法，因为原生的dashjs的内置算法是混合着算的，详见[这篇](https://blog.csdn.net/LvGreat/article/details/103735968?spm=1001.2014.3001.5501)
+前提：让工作的[只有BolaRule唯一一个内置算法](https://neho.ink/%E5%9C%A8dashjs3.0.1%E4%B8%AD%E6%B7%BB%E5%8A%A0%E8%87%AA%E5%AE%9A%E4%B9%89abr%E7%AE%97%E6%B3%95%E5%86%85%E7%BD%AE%E7%89%88%E6%9C%AC/#%E6%8C%89%E9%80%89%E6%8B%A9%E4%BF%AE%E6%94%B9qualityswitchrules)，因为原生的dashjs的内置算法是混合着算的，详见[这篇](https://blog.csdn.net/LvGreat/article/details/103735968?spm=1001.2014.3001.5501)
 
 {{< /admonition >}}
 
@@ -112,7 +110,34 @@ sudo service nginx restart
 
 检查一下输出来的chunksize是否正常，这个版本的fastSwitch是没有bug的
 
-## 上服务器
+## 3. useBufferOccupancyABR
+
+加上输出，跑了很多遍之后发现，每次输出来的chunksize大小块都是从index=4开始的，前四个块的信息并没有打印出来。但是肯定是下载了的。这一次的chunkerror原因不再是fastSwitch，我想了想，并没有执行到输出语句，那么一定是提前退出了。就这样排查到了`useBufferOccupancyABR`这个地方。
+
+<img src="https://gitee.com/tanneho/pic/raw/master/img/202112202203966.png"  />
+
+这个地方从rulesContext中取出了`useBufferOccupancyABR`这个setting中的布尔值
+
+<img src="https://gitee.com/tanneho/pic/raw/master/img/202112202207457.png"  />
+
+该变量在setting中的含义是：是否使用BOLA这个abr策略，默认值为false。
+
+![](https://gitee.com/tanneho/pic/raw/master/img/202112202212376.png)
+
+我用的就是BOLA，它为false就很不合理。因此我直接把这句return注释掉了（逃🏃‍
+
+{{< admonition question >}}
+
+1. 为什么使用BolaRule，但是却默认这个变量初始值为**false**？
+2. 那么到后面进行了前四个chunk下载之后，这个值变为**true**了？
+
+{{< /admonition >}}
+
+
+
+
+
+## 4. 上服务器（later）
 
 树莓派上都能跑了的话，就把这一套搬到Ubuntu服务器上去。
 

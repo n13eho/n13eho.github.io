@@ -17,7 +17,7 @@
 <meta name=application-name content="LoveIt">
 <meta name=apple-mobile-web-app-title content="LoveIt"><meta name=theme-color content="#ffffff"><meta name=msapplication-TileColor content="#da532c"><link rel="shortcut icon" type=image/x-icon href=/favicon.ico>
 <link rel=icon type=image/png sizes=32x32 href=/favicon-32x32.png>
-<link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png><link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png><link rel=mask-icon href=/safari-pinned-tab.svg color=#5bbad5><link rel=manifest href=/site.webmanifest><link rel=canonical href=https://neho.ink/%E5%9C%A8dashjs3.0.1%E4%B8%AD%E6%B7%BB%E5%8A%A0%E8%87%AA%E5%AE%9A%E4%B9%89abr%E7%AE%97%E6%B3%95%E5%86%85%E7%BD%AE%E7%89%88%E6%9C%AC/><link rel=prev href=https://neho.ink/%E7%BB%99dash.js-3.0.1%E4%B8%AD%E5%86%85%E7%BD%AEbolarule%E5%8A%A0%E4%B8%8A%E8%BE%93%E5%87%BA/><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.min.css><link rel=stylesheet href=/css/style.min.css><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.13.0/css/all.min.css><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/animate.css@3.7.2/animate.min.css><script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","headline":"在dash.js 3.0.1中添加自定义ABR算法——内置版本","inLanguage":"zh-CN","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/neho.ink\/%E5%9C%A8dashjs3.0.1%E4%B8%AD%E6%B7%BB%E5%8A%A0%E8%87%AA%E5%AE%9A%E4%B9%89abr%E7%AE%97%E6%B3%95%E5%86%85%E7%BD%AE%E7%89%88%E6%9C%AC\/"},"image":["https:\/\/neho.ink\/images\/Apple-Devices-Preview.png"],"genre":"posts","wordcount":1275,"url":"https:\/\/neho.ink\/%E5%9C%A8dashjs3.0.1%E4%B8%AD%E6%B7%BB%E5%8A%A0%E8%87%AA%E5%AE%9A%E4%B9%89abr%E7%AE%97%E6%B3%95%E5%86%85%E7%BD%AE%E7%89%88%E6%9C%AC\/","datePublished":"2021-12-18T22:28:14+08:00","dateModified":"2021-12-18T22:28:14+08:00","license":"This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher":{"@type":"Organization","name":"xxxx","logo":"https:\/\/neho.ink\/images\/avatar.png"},"author":{"@type":"Person","name":"n13eho"},"description":""}</script></head>
+<link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png><link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png><link rel=mask-icon href=/safari-pinned-tab.svg color=#5bbad5><link rel=manifest href=/site.webmanifest><link rel=canonical href=https://neho.ink/%E5%9C%A8dashjs3.0.1%E4%B8%AD%E6%B7%BB%E5%8A%A0%E8%87%AA%E5%AE%9A%E4%B9%89abr%E7%AE%97%E6%B3%95%E5%86%85%E7%BD%AE%E7%89%88%E6%9C%AC/><link rel=prev href=https://neho.ink/%E7%BB%99dash.js-3.0.1%E4%B8%AD%E5%86%85%E7%BD%AEbolarule%E5%8A%A0%E4%B8%8A%E8%BE%93%E5%87%BA/><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.min.css><link rel=stylesheet href=/css/style.min.css><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.13.0/css/all.min.css><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/animate.css@3.7.2/animate.min.css><script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","headline":"在dash.js 3.0.1中添加自定义ABR算法——内置版本","inLanguage":"zh-CN","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/neho.ink\/%E5%9C%A8dashjs3.0.1%E4%B8%AD%E6%B7%BB%E5%8A%A0%E8%87%AA%E5%AE%9A%E4%B9%89abr%E7%AE%97%E6%B3%95%E5%86%85%E7%BD%AE%E7%89%88%E6%9C%AC\/"},"image":["https:\/\/neho.ink\/images\/Apple-Devices-Preview.png"],"genre":"posts","wordcount":1408,"url":"https:\/\/neho.ink\/%E5%9C%A8dashjs3.0.1%E4%B8%AD%E6%B7%BB%E5%8A%A0%E8%87%AA%E5%AE%9A%E4%B9%89abr%E7%AE%97%E6%B3%95%E5%86%85%E7%BD%AE%E7%89%88%E6%9C%AC\/","datePublished":"2021-12-18T22:28:14+08:00","dateModified":"2021-12-18T22:28:14+08:00","license":"This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher":{"@type":"Organization","name":"xxxx","logo":"https:\/\/neho.ink\/images\/avatar.png"},"author":{"@type":"Person","name":"n13eho"},"description":""}</script></head>
 <body header-desktop=fixed header-mobile=auto><script type=text/javascript>(window.localStorage&&localStorage.getItem('theme')?localStorage.getItem('theme')==='dark':'auto'==='auto'?window.matchMedia('(prefers-color-scheme: dark)').matches:'auto'==='dark')&&document.body.setAttribute('theme','dark')</script>
 <div id=mask></div><div class=wrapper><header class=desktop id=header-desktop>
 <div class=header-wrapper>
@@ -85,7 +85,7 @@
 <div class=toc-content id=toc-content-auto></div>
 </div><article class="page single"><h1 class="single-title animated flipInX">在dash.js 3.0.1中添加自定义ABR算法——内置版本</h1><div class=post-meta>
 <div class=post-meta-line><span class=post-author><a href=neho.ink title=Author rel=" author" class=author><i class="fas fa-user-circle fa-fw"></i>n13eho</a></span>&nbsp;<span class=post-category>收录于 <a href=/categories/dash.js/><i class="far fa-folder fa-fw"></i>dash.js</a></span></div>
-<div class=post-meta-line><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime=2021-12-18>2021-12-18</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 1275 字&nbsp;
+<div class=post-meta-line><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime=2021-12-18>2021-12-18</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 1408 字&nbsp;
 <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 3 分钟&nbsp;<span id=/%E5%9C%A8dashjs3.0.1%E4%B8%AD%E6%B7%BB%E5%8A%A0%E8%87%AA%E5%AE%9A%E4%B9%89abr%E7%AE%97%E6%B3%95%E5%86%85%E7%BD%AE%E7%89%88%E6%9C%AC/ class=leancloud_visitors data-flag-title="在dash.js 3.0.1中添加自定义ABR算法——内置版本">
 <i class="far fa-eye fa-fw"></i>&nbsp;<span class=leancloud-visitors-count></span>&nbsp;次阅读
 </span>&nbsp;</div>
@@ -96,17 +96,17 @@
 </div>
 <div class="details-content toc-content" id=toc-content-static><nav id=TableOfContents>
 <ul>
-<li><a href=#让面板选项对应的abr算法是唯一生效工作的算法>让面板选项对应的ABR算法是唯一生效/工作的算法</a>
+<li><a href=#1-让面板选项对应的abr算法是唯一生效工作的算法>1. 让面板选项对应的ABR算法是唯一生效/工作的算法</a>
 <ul>
 <li><a href=#先看看dashjs默认调用的abr逻辑>先看看dashjs默认调用的ABR逻辑</a></li>
 <li><a href=#按选择修改qualityswitchrules>按选择修改<code>qualitySwitchRules</code></a></li>
 </ul>
 </li>
-<li><a href=#仿照内置格式写一个rule放进去later>🧐仿照内置格式写一个rule放进去（later）</a></li>
+<li><a href=#2-仿照内置格式写一个rule放进去later>2. 🧐仿照内置格式写一个rule放进去（later）</a></li>
 </ul>
 </nav></div>
 </div><div class=content id=content><p>师兄之前已经写过了在CustomRules那边<a href="https://blog.csdn.net/LvGreat/article/details/114790362?spm=1001.2014.3001.5502" target=_blank rel="noopener noreffer">添加自定义ABR算法</a>的文章，并且能够用。这里从它内置的入手，看下能否做到</p>
-<h2 id=让面板选项对应的abr算法是唯一生效工作的算法>让面板选项对应的ABR算法是唯一生效/工作的算法</h2>
+<h2 id=1-让面板选项对应的abr算法是唯一生效工作的算法>1. 让面板选项对应的ABR算法是唯一生效/工作的算法</h2>
 <h3 id=先看看dashjs默认调用的abr逻辑>先看看dashjs默认调用的ABR逻辑</h3>
 <p>参照<a href="https://blog.csdn.net/LvGreat/article/details/121252622?spm=1001.2014.3001.5501" target=_blank rel="noopener noreffer">v4.1.0的abr调用栈</a>，v3.0.1的ABR调用栈丝毫没变：</p>
 <p>1️⃣【ScheduleController】schedule()</p>
@@ -238,8 +238,10 @@
 <span class=p>}</span>
 </code></pre></td></tr></table>
 </div>
-</div><p>那么就依据面板选择，重写这里的逻辑</p>
-<h2 id=仿照内置格式写一个rule放进去later>🧐仿照内置格式写一个rule放进去（later）</h2>
+</div><p>那么就依据面板选择，重写这里的逻辑。v3.0.1也是通过修改setting进行设定的，这里的接口是：settings.get().streaming.abr.ABRStrategy，类型是字符串。因此可以做一个简单的判断语句，按情况向这个list中放入rules</p>
+<p><img class=lazyload src=/svg/loading.min.svg data-src=https://gitee.com/tanneho/pic/raw/master/img/202112191515653.png data-srcset="https://gitee.com/tanneho/pic/raw/master/img/202112191515653.png, https://gitee.com/tanneho/pic/raw/master/img/202112191515653.png 1.5x, https://gitee.com/tanneho/pic/raw/master/img/202112191515653.png 2x" data-sizes=auto alt=https://gitee.com/tanneho/pic/raw/master/img/202112191515653.png title=https://gitee.com/tanneho/pic/raw/master/img/202112191515653.png></p>
+<p>这样可以确保rules执行的唯一性</p>
+<h2 id=2-仿照内置格式写一个rule放进去later>2. 🧐仿照内置格式写一个rule放进去（later）</h2>
 </div><div class=post-footer id=post-footer>
 <div class=post-info>
 <div class=post-info-line>
