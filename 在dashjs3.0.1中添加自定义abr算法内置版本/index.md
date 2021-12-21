@@ -31,7 +31,7 @@ function getMaxQuality(rulesContext) {
 
 所以显而易见，需要改造的是到这一步之前，**qualitySwitchRules**的内容
 
-### 按选择修改`qualitySwitchRules`
+### 按选择修改qualitySwitchRules
 
 `qualitySwitchRules`在最开始初始化的时候就被定义好了，函数`initialize()`中，`qualitySwitchRules`一来就push了5个进去，也就是说默认的算法组里面有`BolaRule`、`ThroughputRule`、`InsufficientBufferRule`、`SwitchHistoryRule`和`DroppedFramesRule`这五种
 

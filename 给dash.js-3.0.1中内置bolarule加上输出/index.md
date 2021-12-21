@@ -112,7 +112,7 @@ sudo service nginx restart
 
 ## 3. 两个问题
 
-#### useBufferOccupancyABR
+### useBufferOccupancyABR
 
 加上输出，跑了很多遍之后发现，每次输出来的chunksize大小块都是从index=4开始的，前四个块的信息并没有打印出来。但是肯定是下载了的。这一次的chunkerror原因不再是fastSwitch，我想了想，并没有执行到输出语句，那么一定是提前退出了。就这样排查到了`useBufferOccupancyABR`这个地方。
 
@@ -135,7 +135,7 @@ sudo service nginx restart
 
 {{< /admonition >}}
 
-#### lastRequest.type !== 'MediaSegment'
+### lastRequest.type !== 'MediaSegment'
 
 ```javascript
 if (lastRequest.type !== 'MediaSegment') {
