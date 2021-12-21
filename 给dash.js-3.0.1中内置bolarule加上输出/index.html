@@ -17,7 +17,7 @@
 <meta name=application-name content="LoveIt">
 <meta name=apple-mobile-web-app-title content="LoveIt"><meta name=theme-color content="#ffffff"><meta name=msapplication-TileColor content="#da532c"><link rel="shortcut icon" type=image/x-icon href=/favicon.ico>
 <link rel=icon type=image/png sizes=32x32 href=/favicon-32x32.png>
-<link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png><link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png><link rel=mask-icon href=/safari-pinned-tab.svg color=#5bbad5><link rel=manifest href=/site.webmanifest><link rel=canonical href=https://neho.ink/%E7%BB%99dash.js-3.0.1%E4%B8%AD%E5%86%85%E7%BD%AEbolarule%E5%8A%A0%E4%B8%8A%E8%BE%93%E5%87%BA/><link rel=prev href=https://neho.ink/%E6%B8%B8%E6%B3%B3%E4%B8%AD%E7%BA%A7%E7%8F%AD%E7%9A%84%E5%8E%86%E7%BB%83/><link rel=next href=https://neho.ink/%E5%9C%A8dashjs3.0.1%E4%B8%AD%E6%B7%BB%E5%8A%A0%E8%87%AA%E5%AE%9A%E4%B9%89abr%E7%AE%97%E6%B3%95%E5%86%85%E7%BD%AE%E7%89%88%E6%9C%AC/><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.min.css><link rel=stylesheet href=/css/style.min.css><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.13.0/css/all.min.css><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/animate.css@3.7.2/animate.min.css><script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","headline":"给dash.js 3.0.1中内置BolaRule加上输出","inLanguage":"zh-CN","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/neho.ink\/%E7%BB%99dash.js-3.0.1%E4%B8%AD%E5%86%85%E7%BD%AEbolarule%E5%8A%A0%E4%B8%8A%E8%BE%93%E5%87%BA\/"},"image":["https:\/\/neho.ink\/images\/Apple-Devices-Preview.png"],"genre":"posts","keywords":"配环境, 前端","wordcount":1413,"url":"https:\/\/neho.ink\/%E7%BB%99dash.js-3.0.1%E4%B8%AD%E5%86%85%E7%BD%AEbolarule%E5%8A%A0%E4%B8%8A%E8%BE%93%E5%87%BA\/","datePublished":"2021-12-18T15:43:27+08:00","dateModified":"2021-12-18T15:43:27+08:00","license":"This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher":{"@type":"Organization","name":"xxxx","logo":"https:\/\/neho.ink\/images\/avatar.png"},"author":{"@type":"Person","name":"n13eho"},"description":""}</script></head>
+<link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png><link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png><link rel=mask-icon href=/safari-pinned-tab.svg color=#5bbad5><link rel=manifest href=/site.webmanifest><link rel=canonical href=https://neho.ink/%E7%BB%99dash.js-3.0.1%E4%B8%AD%E5%86%85%E7%BD%AEbolarule%E5%8A%A0%E4%B8%8A%E8%BE%93%E5%87%BA/><link rel=prev href=https://neho.ink/%E6%B8%B8%E6%B3%B3%E4%B8%AD%E7%BA%A7%E7%8F%AD%E7%9A%84%E5%8E%86%E7%BB%83/><link rel=next href=https://neho.ink/%E5%9C%A8dashjs3.0.1%E4%B8%AD%E6%B7%BB%E5%8A%A0%E8%87%AA%E5%AE%9A%E4%B9%89abr%E7%AE%97%E6%B3%95%E5%86%85%E7%BD%AE%E7%89%88%E6%9C%AC/><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.min.css><link rel=stylesheet href=/css/style.min.css><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.13.0/css/all.min.css><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/animate.css@3.7.2/animate.min.css><script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","headline":"给dash.js 3.0.1中内置BolaRule加上输出","inLanguage":"zh-CN","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/neho.ink\/%E7%BB%99dash.js-3.0.1%E4%B8%AD%E5%86%85%E7%BD%AEbolarule%E5%8A%A0%E4%B8%8A%E8%BE%93%E5%87%BA\/"},"image":["https:\/\/neho.ink\/images\/Apple-Devices-Preview.png"],"genre":"posts","keywords":"配环境, 前端","wordcount":1747,"url":"https:\/\/neho.ink\/%E7%BB%99dash.js-3.0.1%E4%B8%AD%E5%86%85%E7%BD%AEbolarule%E5%8A%A0%E4%B8%8A%E8%BE%93%E5%87%BA\/","datePublished":"2021-12-18T15:43:27+08:00","dateModified":"2021-12-18T15:43:27+08:00","license":"This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher":{"@type":"Organization","name":"xxxx","logo":"https:\/\/neho.ink\/images\/avatar.png"},"author":{"@type":"Person","name":"n13eho"},"description":""}</script></head>
 <body header-desktop=fixed header-mobile=auto><script type=text/javascript>(window.localStorage&&localStorage.getItem('theme')?localStorage.getItem('theme')==='dark':'auto'==='auto'?window.matchMedia('(prefers-color-scheme: dark)').matches:'auto'==='dark')&&document.body.setAttribute('theme','dark')</script>
 <div id=mask></div><div class=wrapper><header class=desktop id=header-desktop>
 <div class=header-wrapper>
@@ -85,8 +85,8 @@
 <div class=toc-content id=toc-content-auto></div>
 </div><article class="page single"><h1 class="single-title animated flipInX">给dash.js 3.0.1中内置BolaRule加上输出</h1><div class=post-meta>
 <div class=post-meta-line><span class=post-author><a href=neho.ink title=Author rel=" author" class=author><i class="fas fa-user-circle fa-fw"></i>n13eho</a></span>&nbsp;<span class=post-category>收录于 <a href=/categories/dash.js/><i class="far fa-folder fa-fw"></i>dash.js</a></span></div>
-<div class=post-meta-line><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime=2021-12-18>2021-12-18</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 1413 字&nbsp;
-<i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 3 分钟&nbsp;<span id=/%E7%BB%99dash.js-3.0.1%E4%B8%AD%E5%86%85%E7%BD%AEbolarule%E5%8A%A0%E4%B8%8A%E8%BE%93%E5%87%BA/ class=leancloud_visitors data-flag-title="给dash.js 3.0.1中内置BolaRule加上输出">
+<div class=post-meta-line><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime=2021-12-18>2021-12-18</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 1747 字&nbsp;
+<i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 4 分钟&nbsp;<span id=/%E7%BB%99dash.js-3.0.1%E4%B8%AD%E5%86%85%E7%BD%AEbolarule%E5%8A%A0%E4%B8%8A%E8%BE%93%E5%87%BA/ class=leancloud_visitors data-flag-title="给dash.js 3.0.1中内置BolaRule加上输出">
 <i class="far fa-eye fa-fw"></i>&nbsp;<span class=leancloud-visitors-count></span>&nbsp;次阅读
 </span>&nbsp;</div>
 </div><div class="details toc" id=toc-static kept>
@@ -110,8 +110,17 @@
 <li><a href=#添加输出量>添加输出量</a></li>
 </ul>
 </li>
-<li><a href=#3-usebufferoccupancyabr>3. useBufferOccupancyABR</a></li>
-<li><a href=#4-上服务器later>4. 上服务器（later）</a></li>
+<li><a href=#3-两个问题>3. 两个问题</a>
+<ul>
+<li>
+<ul>
+<li><a href=#usebufferoccupancyabr>useBufferOccupancyABR</a></li>
+<li><a href=#lastrequesttype--mediasegment>lastRequest.type !== &lsquo;MediaSegment&rsquo;</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href=#4-上服务器>4. 上服务器</a></li>
 </ul>
 </nav></div>
 </div><div class=content id=content><h2 id=1-在树莓派上配置301所需环境>1. 在树莓派上配置3.0.1所需环境</h2>
@@ -247,7 +256,8 @@ sudo service nginx restart
 </code></pre></td></tr></table>
 </div>
 </div><p>检查一下输出来的chunksize是否正常，这个版本的fastSwitch是没有bug的</p>
-<h2 id=3-usebufferoccupancyabr>3. useBufferOccupancyABR</h2>
+<h2 id=3-两个问题>3. 两个问题</h2>
+<h4 id=usebufferoccupancyabr>useBufferOccupancyABR</h4>
 <p>加上输出，跑了很多遍之后发现，每次输出来的chunksize大小块都是从index=4开始的，前四个块的信息并没有打印出来。但是肯定是下载了的。这一次的chunkerror原因不再是fastSwitch，我想了想，并没有执行到输出语句，那么一定是提前退出了。就这样排查到了<code>useBufferOccupancyABR</code>这个地方。</p>
 <p><img src=https://gitee.com/tanneho/pic/raw/master/img/202112202203966.png></p>
 <p>这个地方从rulesContext中取出了<code>useBufferOccupancyABR</code>这个setting中的布尔值</p>
@@ -267,8 +277,33 @@ sudo service nginx restart
 </div>
 </div>
 </div>
-<h2 id=4-上服务器later>4. 上服务器（later）</h2>
+<h4 id=lastrequesttype--mediasegment>lastRequest.type !== &lsquo;MediaSegment&rsquo;</h4>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-javascript data-lang=javascript><span class=k>if</span> <span class=p>(</span><span class=nx>lastRequest</span><span class=p>.</span><span class=nx>type</span> <span class=o>!==</span> <span class=s1>&#39;MediaSegment&#39;</span><span class=p>)</span> <span class=p>{</span>
+    <span class=nx>logger</span><span class=p>.</span><span class=nx>debug</span><span class=p>(</span><span class=s2>&#34;Last request is not a media segment, bailing.&#34;</span><span class=p>);</span>
+    <span class=k>return</span> <span class=nx>switchRequest</span><span class=p>;</span>
+<span class=p>}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>他会不规则地打印出来&mldr;原因？？？</p>
+<h2 id=4-上服务器>4. 上服务器</h2>
 <p>树莓派上都能跑了的话，就把这一套搬到Ubuntu服务器上去。</p>
+<ol>
+<li>copy整个项目文件到根目录</li>
+<li>更改<code>/usr/local/nginx/conf/nginx.conf</code>，其中location字段改为<code>/root/dashjs-301</code></li>
+<li>重启ngnix服务：<code>sudo service nginx restart</code></li>
+<li>在main.js中修改mpd文件地路径：<code>http://serverIP:port/video-src/bbb-4s-an.mpd</code></li>
+<li>访问网址<code>http://the.server.ip.190:8007/samples/dash-if-reference-player/index.html</code></li>
+<li>结束</li>
+</ol>
+<p>使用：option中<strong>取消Fast Switching ABR</strong>，选中<strong>ABR Strategy: BOLA</strong>，控制台filter为<strong>inner</strong>，load</p>
 </div><div class=post-footer id=post-footer>
 <div class=post-info>
 <div class=post-info-line>

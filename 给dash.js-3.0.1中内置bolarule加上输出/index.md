@@ -110,7 +110,9 @@ sudo service nginx restart
 
 检查一下输出来的chunksize是否正常，这个版本的fastSwitch是没有bug的
 
-## 3. useBufferOccupancyABR
+## 3. 两个问题
+
+#### useBufferOccupancyABR
 
 加上输出，跑了很多遍之后发现，每次输出来的chunksize大小块都是从index=4开始的，前四个块的信息并没有打印出来。但是肯定是下载了的。这一次的chunkerror原因不再是fastSwitch，我想了想，并没有执行到输出语句，那么一定是提前退出了。就这样排查到了`useBufferOccupancyABR`这个地方。
 
@@ -133,11 +135,28 @@ sudo service nginx restart
 
 {{< /admonition >}}
 
+#### lastRequest.type !== 'MediaSegment'
 
+```javascript
+if (lastRequest.type !== 'MediaSegment') {
+    logger.debug("Last request is not a media segment, bailing.");
+    return switchRequest;
+}
+```
 
+他会不规则地打印出来...原因？？？
 
-
-## 4. 上服务器（later）
+## 4. 上服务器
 
 树莓派上都能跑了的话，就把这一套搬到Ubuntu服务器上去。
+
+1. copy整个项目文件到根目录
+2. 更改`/usr/local/nginx/conf/nginx.conf`，其中location字段改为`/root/dashjs-301`
+3. 重启ngnix服务：`sudo service nginx restart`
+4. 在main.js中修改mpd文件地路径：`http://serverIP:port/video-src/bbb-4s-an.mpd`
+5. 访问网址`http://the.server.ip.190:8007/samples/dash-if-reference-player/index.html`
+6. 结束
+
+使用：option中**取消Fast Switching ABR**，选中**ABR Strategy: BOLA**，控制台filter为**inner**，load
+
 
