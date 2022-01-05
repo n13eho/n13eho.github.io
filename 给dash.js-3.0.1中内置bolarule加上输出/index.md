@@ -135,6 +135,16 @@ sudo service nginx restart
 
 {{< /admonition >}}
 
+![](https://gitee.com/tanneho/pic/raw/master/img/202112231443777.png)
+
+每次都是如此规整的6次非使用bola，中间伴随着两次mpd请求的问题，😶我仍然不知道是为什么。但是这里也可以看出来，两个红框里面的对于非media的请求，就是应该提前return出来。
+
+这里是否可以理解成一些误打误撞...
+
+究竟是哪里让我卡住，理解不通了呢...
+
+
+
 ### lastRequest.type !== 'MediaSegment'
 
 ```javascript
@@ -151,8 +161,8 @@ if (lastRequest.type !== 'MediaSegment') {
 树莓派上都能跑了的话，就把这一套搬到Ubuntu服务器上去。
 
 1. copy整个项目文件到根目录
-2. 更改`/usr/local/nginx/conf/nginx.conf`，其中location字段改为`/root/dashjs-301`
-3. 重启ngnix服务：`sudo service nginx restart`
+2. 更改`/usr/local/nginx/conf/nginx.conf`，其中location字段改为`/root/dashjs-301`。并且将第一句的`#user nobody`改为`user root`。又是一个意想不到的权限403问题😋
+3. 重启ngnix服务：` nginx -s reload`
 4. 在main.js中修改mpd文件地路径：`http://serverIP:port/video-src/bbb-4s-an.mpd`
 5. 访问网址`http://the.server.ip.190:8007/samples/dash-if-reference-player/index.html`
 6. 结束

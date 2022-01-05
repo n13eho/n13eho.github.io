@@ -17,7 +17,7 @@
 <meta name=application-name content="LoveIt">
 <meta name=apple-mobile-web-app-title content="LoveIt"><meta name=theme-color content="#ffffff"><meta name=msapplication-TileColor content="#da532c"><link rel="shortcut icon" type=image/x-icon href=/favicon.ico>
 <link rel=icon type=image/png sizes=32x32 href=/favicon-32x32.png>
-<link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png><link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png><link rel=mask-icon href=/safari-pinned-tab.svg color=#5bbad5><link rel=manifest href=/site.webmanifest><link rel=canonical href=https://neho.ink/%E7%BB%99dash.js-3.0.1%E4%B8%AD%E5%86%85%E7%BD%AEbolarule%E5%8A%A0%E4%B8%8A%E8%BE%93%E5%87%BA/><link rel=prev href=https://neho.ink/%E6%B8%B8%E6%B3%B3%E4%B8%AD%E7%BA%A7%E7%8F%AD%E7%9A%84%E5%8E%86%E7%BB%83/><link rel=next href=https://neho.ink/%E5%9C%A8dashjs3.0.1%E4%B8%AD%E6%B7%BB%E5%8A%A0%E8%87%AA%E5%AE%9A%E4%B9%89abr%E7%AE%97%E6%B3%95%E5%86%85%E7%BD%AE%E7%89%88%E6%9C%AC/><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.min.css><link rel=stylesheet href=/css/style.min.css><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.13.0/css/all.min.css><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/animate.css@3.7.2/animate.min.css><script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","headline":"给dash.js 3.0.1中内置BolaRule加上输出","inLanguage":"zh-CN","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/neho.ink\/%E7%BB%99dash.js-3.0.1%E4%B8%AD%E5%86%85%E7%BD%AEbolarule%E5%8A%A0%E4%B8%8A%E8%BE%93%E5%87%BA\/"},"image":["https:\/\/neho.ink\/images\/Apple-Devices-Preview.png"],"genre":"posts","keywords":"配环境, 前端","wordcount":1747,"url":"https:\/\/neho.ink\/%E7%BB%99dash.js-3.0.1%E4%B8%AD%E5%86%85%E7%BD%AEbolarule%E5%8A%A0%E4%B8%8A%E8%BE%93%E5%87%BA\/","datePublished":"2021-12-18T15:43:27+08:00","dateModified":"2021-12-18T15:43:27+08:00","license":"This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher":{"@type":"Organization","name":"xxxx","logo":"https:\/\/neho.ink\/images\/avatar.png"},"author":{"@type":"Person","name":"n13eho"},"description":""}</script></head>
+<link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png><link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png><link rel=mask-icon href=/safari-pinned-tab.svg color=#5bbad5><link rel=manifest href=/site.webmanifest><link rel=canonical href=https://neho.ink/%E7%BB%99dash.js-3.0.1%E4%B8%AD%E5%86%85%E7%BD%AEbolarule%E5%8A%A0%E4%B8%8A%E8%BE%93%E5%87%BA/><link rel=prev href=https://neho.ink/%E6%B8%B8%E6%B3%B3%E4%B8%AD%E7%BA%A7%E7%8F%AD%E7%9A%84%E5%8E%86%E7%BB%83/><link rel=next href=https://neho.ink/%E5%9C%A8dashjs3.0.1%E4%B8%AD%E6%B7%BB%E5%8A%A0%E8%87%AA%E5%AE%9A%E4%B9%89abr%E7%AE%97%E6%B3%95%E5%86%85%E7%BD%AE%E7%89%88%E6%9C%AC/><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.min.css><link rel=stylesheet href=/css/style.min.css><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.13.0/css/all.min.css><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/animate.css@3.7.2/animate.min.css><script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","headline":"给dash.js 3.0.1中内置BolaRule加上输出","inLanguage":"zh-CN","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/neho.ink\/%E7%BB%99dash.js-3.0.1%E4%B8%AD%E5%86%85%E7%BD%AEbolarule%E5%8A%A0%E4%B8%8A%E8%BE%93%E5%87%BA\/"},"image":["https:\/\/neho.ink\/images\/Apple-Devices-Preview.png"],"genre":"posts","keywords":"配环境, 前端","wordcount":1929,"url":"https:\/\/neho.ink\/%E7%BB%99dash.js-3.0.1%E4%B8%AD%E5%86%85%E7%BD%AEbolarule%E5%8A%A0%E4%B8%8A%E8%BE%93%E5%87%BA\/","datePublished":"2021-12-18T15:43:27+08:00","dateModified":"2021-12-18T15:43:27+08:00","license":"This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher":{"@type":"Organization","name":"xxxx","logo":"https:\/\/neho.ink\/images\/avatar.png"},"author":{"@type":"Person","name":"n13eho"},"description":""}</script></head>
 <body header-desktop=fixed header-mobile=auto><script type=text/javascript>(window.localStorage&&localStorage.getItem('theme')?localStorage.getItem('theme')==='dark':'auto'==='auto'?window.matchMedia('(prefers-color-scheme: dark)').matches:'auto'==='dark')&&document.body.setAttribute('theme','dark')</script>
 <div id=mask></div><div class=wrapper><header class=desktop id=header-desktop>
 <div class=header-wrapper>
@@ -85,7 +85,7 @@
 <div class="toc-content always-active" id=toc-content-auto></div>
 </div><article class="page single"><h1 class="single-title animated flipInX">给dash.js 3.0.1中内置BolaRule加上输出</h1><div class=post-meta>
 <div class=post-meta-line><span class=post-author><a href=neho.ink title=Author rel=" author" class=author><i class="fas fa-user-circle fa-fw"></i>n13eho</a></span>&nbsp;<span class=post-category>收录于 <a href=/categories/dash.js/><i class="far fa-folder fa-fw"></i>dash.js</a></span></div>
-<div class=post-meta-line><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime=2021-12-18>2021-12-18</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 1747 字&nbsp;
+<div class=post-meta-line><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime=2021-12-18>2021-12-18</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 1929 字&nbsp;
 <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 4 分钟&nbsp;<span id=/%E7%BB%99dash.js-3.0.1%E4%B8%AD%E5%86%85%E7%BD%AEbolarule%E5%8A%A0%E4%B8%8A%E8%BE%93%E5%87%BA/ class=leancloud_visitors data-flag-title="给dash.js 3.0.1中内置BolaRule加上输出">
 <i class="far fa-eye fa-fw"></i>&nbsp;<span class=leancloud-visitors-count></span>&nbsp;次阅读
 </span>&nbsp;</div>
@@ -273,6 +273,10 @@ sudo service nginx restart
 </div>
 </div>
 </div>
+<p><img class=lazyload src=/svg/loading.min.svg data-src=https://gitee.com/tanneho/pic/raw/master/img/202112231443777.png data-srcset="https://gitee.com/tanneho/pic/raw/master/img/202112231443777.png, https://gitee.com/tanneho/pic/raw/master/img/202112231443777.png 1.5x, https://gitee.com/tanneho/pic/raw/master/img/202112231443777.png 2x" data-sizes=auto alt=https://gitee.com/tanneho/pic/raw/master/img/202112231443777.png title=https://gitee.com/tanneho/pic/raw/master/img/202112231443777.png></p>
+<p>每次都是如此规整的6次非使用bola，中间伴随着两次mpd请求的问题，😶我仍然不知道是为什么。但是这里也可以看出来，两个红框里面的对于非media的请求，就是应该提前return出来。</p>
+<p>这里是否可以理解成一些误打误撞&mldr;</p>
+<p>究竟是哪里让我卡住，理解不通了呢&mldr;</p>
 <h3 id=lastrequesttype--mediasegment>lastRequest.type !== &lsquo;MediaSegment&rsquo;</h3>
 <div class=highlight><div class=chroma>
 <table class=lntable><tr><td class=lntd>
@@ -293,8 +297,8 @@ sudo service nginx restart
 <p>树莓派上都能跑了的话，就把这一套搬到Ubuntu服务器上去。</p>
 <ol>
 <li>copy整个项目文件到根目录</li>
-<li>更改<code>/usr/local/nginx/conf/nginx.conf</code>，其中location字段改为<code>/root/dashjs-301</code></li>
-<li>重启ngnix服务：<code>sudo service nginx restart</code></li>
+<li>更改<code>/usr/local/nginx/conf/nginx.conf</code>，其中location字段改为<code>/root/dashjs-301</code>。并且将第一句的<code>#user nobody</code>改为<code>user root</code>。又是一个意想不到的权限403问题😋</li>
+<li>重启ngnix服务：<code> nginx -s reload</code></li>
 <li>在main.js中修改mpd文件地路径：<code>http://serverIP:port/video-src/bbb-4s-an.mpd</code></li>
 <li>访问网址<code>http://the.server.ip.190:8007/samples/dash-if-reference-player/index.html</code></li>
 <li>结束</li>
@@ -331,7 +335,7 @@ Please enable JavaScript to view the comments powered by <a href=https://valine.
 </noscript></div></article></div>
 </main><footer class=footer>
 <div class=footer-container><div class=footer-line>由 <a href=https://gohugo.io/ target=_blank rel="noopener noreffer" title="Hugo 0.88.1">Hugo</a> 强力驱动 | 主题 - <a href=https://github.com/dillonzq/LoveIt target=_blank rel="noopener noreffer" title="LoveIt 0.2.10"><i class="far fa-kiss-wink-heart fa-fw"></i> LoveIt</a>
-</div><div class=footer-line><i class="far fa-copyright fa-fw"></i><span itemprop=copyrightYear>2021</span><span class=author itemprop=copyrightHolder>&nbsp;<a href=neho.ink target=_blank>n13eho</a></span>&nbsp;|&nbsp;<span class=license><a rel="license external nofollow noopener noreffer" href=https://creativecommons.org/licenses/by-nc/4.0/ target=_blank>CC BY-NC 4.0</a></span></div>
+</div><div class=footer-line><i class="far fa-copyright fa-fw"></i><span itemprop=copyrightYear>2021 - 2022</span><span class=author itemprop=copyrightHolder>&nbsp;<a href=neho.ink target=_blank>n13eho</a></span>&nbsp;|&nbsp;<span class=license><a rel="license external nofollow noopener noreffer" href=https://creativecommons.org/licenses/by-nc/4.0/ target=_blank>CC BY-NC 4.0</a></span></div>
 </div>
 </footer></div>
 <div id=fixed-buttons><a href=# id=back-to-top class=fixed-button title=回到顶部>
