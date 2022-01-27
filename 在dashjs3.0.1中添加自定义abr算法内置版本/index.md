@@ -1,4 +1,4 @@
-# 在dash.js 3.0.1中添加自定义ABR算法——内置版本（未完）
+# （未完）在dash.js 3.0.1中添加自定义ABR算法——内置版本
 
 
 师兄之前已经写过了在CustomRules那边[添加自定义ABR算法](https://blog.csdn.net/LvGreat/article/details/114790362?spm=1001.2014.3001.5502)的文章，并且能够用。这里从它内置的入手，看下能否做到
