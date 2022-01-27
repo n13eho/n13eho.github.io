@@ -4,6 +4,7 @@
 {{< admonition abstract >}}
 
 结论：
+
 WIFI：按RSSI分为五档。0: (-∞, -88)，1: [-88, -77)，2: [-77, -66)，3: [-66, -55)，4: [-55, +∞)
 
 4G：
@@ -44,7 +45,7 @@ public static final int RSSI_LEVELS = 5;
 
 ### 结论
 
-通过line 1862不难算出这5档的范围为：
+不难算出这5档的范围为：
 
 - 0: (-∞, -88)
 - 1: [-88, -77)
@@ -58,7 +59,7 @@ public static final int RSSI_LEVELS = 5;
 
 ## 4G
 
-### 不再只有RSSI
+### RSRP
 
 4GLTE的决策变量不再主要是RSSI了，还有另外一个比较重要的物理量RSRP，一些[前置知识](https://blog.csdn.net/fun_tion/article/details/100708167)
 
