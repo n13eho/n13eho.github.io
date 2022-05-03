@@ -82,5 +82,5 @@
 
 没有后半句。
 
-![](https://gitee.com/tanneho/pic/raw/master/img/202112152232336.png)
+![](https://nehopicbed.oss-cn-beijing.aliyuncs.com/img/202112152232336.png)
 

@@ -83,7 +83,7 @@ function initialize() {
 
 那么就依据面板选择，重写这里的逻辑。v3.0.1也是通过修改setting进行设定的，这里的接口是：settings.get().streaming.abr.ABRStrategy，类型是字符串。因此可以做一个简单的判断语句，按情况向这个list中放入rules
 
-![](https://gitee.com/tanneho/pic/raw/master/img/202112191515653.png)
+![](https://nehopicbed.oss-cn-beijing.aliyuncs.com/img/202112191515653.png)
 
 这样可以确保rules执行的唯一性
 

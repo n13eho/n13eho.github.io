@@ -131,7 +131,7 @@
 </code></pre></td></tr></table>
 </div>
 </div><p>当然需要提前配好nodejs环境。安装完之后验证</p>
-<p><img src=https://gitee.com/tanneho/pic/raw/master/img/202112181559902.png></p>
+<p><img src=https://nehopicbed.oss-cn-beijing.aliyuncs.com/img/202112181559902.png></p>
 <h3 id=gurnt装不上怎么办>gurnt装不上怎么办</h3>
 <div class="details admonition note open">
 <div class="details-summary admonition-title">
@@ -156,7 +156,7 @@
 <pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=nb>export</span> <span class=nv>PATH</span><span class=o>=</span>/root/nodejs/bin:<span class=nv>$PATH</span>
 </code></pre></td></tr></table>
 </div>
-</div><p><img src=https://gitee.com/tanneho/pic/raw/master/img/202112181606424.png style=zoom:67%></p>
+</div><p><img src=https://nehopicbed.oss-cn-beijing.aliyuncs.com/img/202112181606424.png style=zoom:67%></p>
 <p>最后记得再source一下</p>
 <div class=highlight><div class=chroma>
 <table class=lntable><tr><td class=lntd>
@@ -183,9 +183,9 @@
 grunt debug
 </code></pre></td></tr></table>
 </div>
-</div><p><img class=lazyload src=/svg/loading.min.svg data-src=https://gitee.com/tanneho/pic/raw/master/img/202112181625688.png data-srcset="https://gitee.com/tanneho/pic/raw/master/img/202112181625688.png, https://gitee.com/tanneho/pic/raw/master/img/202112181625688.png 1.5x, https://gitee.com/tanneho/pic/raw/master/img/202112181625688.png 2x" data-sizes=auto alt=https://gitee.com/tanneho/pic/raw/master/img/202112181625688.png title=https://gitee.com/tanneho/pic/raw/master/img/202112181625688.png></p>
+</div><p><img class=lazyload src=/svg/loading.min.svg data-src=https://nehopicbed.oss-cn-beijing.aliyuncs.com/img/202112181625688.png data-srcset="https://nehopicbed.oss-cn-beijing.aliyuncs.com/img/202112181625688.png, https://nehopicbed.oss-cn-beijing.aliyuncs.com/img/202112181625688.png 1.5x, https://nehopicbed.oss-cn-beijing.aliyuncs.com/img/202112181625688.png 2x" data-sizes=auto alt=https://nehopicbed.oss-cn-beijing.aliyuncs.com/img/202112181625688.png title=https://nehopicbed.oss-cn-beijing.aliyuncs.com/img/202112181625688.png></p>
 <p>用grunt dev可以看得到我们的html目录在哪里</p>
-<p><img class=lazyload src=/svg/loading.min.svg data-src=https://gitee.com/tanneho/pic/raw/master/img/202112181628209.png data-srcset="https://gitee.com/tanneho/pic/raw/master/img/202112181628209.png, https://gitee.com/tanneho/pic/raw/master/img/202112181628209.png 1.5x, https://gitee.com/tanneho/pic/raw/master/img/202112181628209.png 2x" data-sizes=auto alt=https://gitee.com/tanneho/pic/raw/master/img/202112181628209.png title=https://gitee.com/tanneho/pic/raw/master/img/202112181628209.png></p>
+<p><img class=lazyload src=/svg/loading.min.svg data-src=https://nehopicbed.oss-cn-beijing.aliyuncs.com/img/202112181628209.png data-srcset="https://nehopicbed.oss-cn-beijing.aliyuncs.com/img/202112181628209.png, https://nehopicbed.oss-cn-beijing.aliyuncs.com/img/202112181628209.png 1.5x, https://nehopicbed.oss-cn-beijing.aliyuncs.com/img/202112181628209.png 2x" data-sizes=auto alt=https://nehopicbed.oss-cn-beijing.aliyuncs.com/img/202112181628209.png title=https://nehopicbed.oss-cn-beijing.aliyuncs.com/img/202112181628209.png></p>
 <h3 id=网站上线>网站上线</h3>
 <p>通过一些顺藤摸瓜，可以得到访问目标是<code>http://192.168.1.167:3002/samples/dash-if-reference-player/index.html</code>，因此就应该把ngnix网站根目录改为当前的dashjs-301就好了</p>
 <div class=highlight><div class=chroma>
@@ -202,7 +202,7 @@ sudo service nginx restart
 <p>完了之后把获取视频的地址改为http://10.61.140.191:3456/video-src/bbb-4s-an.mpd，这里用路由器做了一些端口转发，直接访问的是路由器的ip。（用内网突然访问不到了，所以换成这个</p>
 <h3 id=测试输出>测试输出</h3>
 <p>这里就随便在/src/streaming/rules/abr/BolaRule.js中输出一些东西，打包，运行即可。验证的确是执行了Bola算法了的即可。</p>
-<p><img src=https://gitee.com/tanneho/pic/raw/master/img/202112182237372.png></p>
+<p><img src=https://nehopicbed.oss-cn-beijing.aliyuncs.com/img/202112182237372.png></p>
 <h3 id=添加输出量>添加输出量</h3>
 <div class="details admonition note open">
 <div class="details-summary admonition-title">
@@ -255,11 +255,11 @@ sudo service nginx restart
 <h2 id=3-两个问题>3. 两个问题</h2>
 <h3 id=usebufferoccupancyabr>useBufferOccupancyABR</h3>
 <p>加上输出，跑了很多遍之后发现，每次输出来的chunksize大小块都是从index=4开始的，前四个块的信息并没有打印出来。但是肯定是下载了的。这一次的chunkerror原因不再是fastSwitch，我想了想，并没有执行到输出语句，那么一定是提前退出了。就这样排查到了<code>useBufferOccupancyABR</code>这个地方。</p>
-<p><img src=https://gitee.com/tanneho/pic/raw/master/img/202112202203966.png></p>
+<p><img src=https://nehopicbed.oss-cn-beijing.aliyuncs.com/img/202112202203966.png></p>
 <p>这个地方从rulesContext中取出了<code>useBufferOccupancyABR</code>这个setting中的布尔值</p>
-<p><img src=https://gitee.com/tanneho/pic/raw/master/img/202112202207457.png></p>
+<p><img src=https://nehopicbed.oss-cn-beijing.aliyuncs.com/img/202112202207457.png></p>
 <p>该变量在setting中的含义是：是否使用BOLA这个abr策略，默认值为false。</p>
-<p><img class=lazyload src=/svg/loading.min.svg data-src=https://gitee.com/tanneho/pic/raw/master/img/202112202212376.png data-srcset="https://gitee.com/tanneho/pic/raw/master/img/202112202212376.png, https://gitee.com/tanneho/pic/raw/master/img/202112202212376.png 1.5x, https://gitee.com/tanneho/pic/raw/master/img/202112202212376.png 2x" data-sizes=auto alt=https://gitee.com/tanneho/pic/raw/master/img/202112202212376.png title=https://gitee.com/tanneho/pic/raw/master/img/202112202212376.png></p>
+<p><img class=lazyload src=/svg/loading.min.svg data-src=https://nehopicbed.oss-cn-beijing.aliyuncs.com/img/202112202212376.png data-srcset="https://nehopicbed.oss-cn-beijing.aliyuncs.com/img/202112202212376.png, https://nehopicbed.oss-cn-beijing.aliyuncs.com/img/202112202212376.png 1.5x, https://nehopicbed.oss-cn-beijing.aliyuncs.com/img/202112202212376.png 2x" data-sizes=auto alt=https://nehopicbed.oss-cn-beijing.aliyuncs.com/img/202112202212376.png title=https://nehopicbed.oss-cn-beijing.aliyuncs.com/img/202112202212376.png></p>
 <p>我用的就是BOLA，它为false就很不合理。因此我直接把这句return注释掉了（逃🏃‍</p>
 <div class="details admonition question open">
 <div class="details-summary admonition-title">
@@ -273,7 +273,7 @@ sudo service nginx restart
 </div>
 </div>
 </div>
-<p><img class=lazyload src=/svg/loading.min.svg data-src=https://gitee.com/tanneho/pic/raw/master/img/202112231443777.png data-srcset="https://gitee.com/tanneho/pic/raw/master/img/202112231443777.png, https://gitee.com/tanneho/pic/raw/master/img/202112231443777.png 1.5x, https://gitee.com/tanneho/pic/raw/master/img/202112231443777.png 2x" data-sizes=auto alt=https://gitee.com/tanneho/pic/raw/master/img/202112231443777.png title=https://gitee.com/tanneho/pic/raw/master/img/202112231443777.png></p>
+<p><img class=lazyload src=/svg/loading.min.svg data-src=https://nehopicbed.oss-cn-beijing.aliyuncs.com/img/202112231443777.png data-srcset="https://nehopicbed.oss-cn-beijing.aliyuncs.com/img/202112231443777.png, https://nehopicbed.oss-cn-beijing.aliyuncs.com/img/202112231443777.png 1.5x, https://nehopicbed.oss-cn-beijing.aliyuncs.com/img/202112231443777.png 2x" data-sizes=auto alt=https://nehopicbed.oss-cn-beijing.aliyuncs.com/img/202112231443777.png title=https://nehopicbed.oss-cn-beijing.aliyuncs.com/img/202112231443777.png></p>
 <p>每次都是如此规整的6次非使用bola，中间伴随着两次mpd请求的问题，😶我仍然不知道是为什么。但是这里也可以看出来，两个红框里面的对于非media的请求，就是应该提前return出来。</p>
 <p>这里是否可以理解成一些误打误撞&mldr;</p>
 <p>究竟是哪里让我卡住，理解不通了呢&mldr;</p>

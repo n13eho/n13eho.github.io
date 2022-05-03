@@ -104,13 +104,14 @@ export NODE_OPTIONS="--max-old-space-size=512"
 
 > 后记：我后来在树莓派4B上试了试整个环境的配置，全程丝滑顺利，让我怀疑方向是否错了？
 
-<img src="https://gitee.com/tanneho/pic/raw/master/img/202111211818982.png" style="zoom: 80%;" />
+<img src=" https://nehopicbed.oss-cn-beijing.aliyuncs.com/img/202111211818982.png" style="zoom: 80%;" />
 
 直接把dashjs放在根目录
 
 <div align="center">
-        <img src="https://gitee.com/tanneho/pic/raw/master/img/202112022100493.png" style="zoom:80%;">  
+        <img src=" https://nehopicbed.oss-cn-beijing.aliyuncs.com/img/202112022100493.png" style="zoom:80%;">  
 </div>
+
 
 然后修改`/etc/nginx/sites-available/default`（服务器上nginx的设置文件路径是：`/usr/local/nginx/conf/nginx.conf`）中的
 

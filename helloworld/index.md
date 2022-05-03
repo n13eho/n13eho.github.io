@@ -3,4 +3,4 @@
 
 ## 你好哇
 
-![](https://gitee.com/tanneho/pic/raw/master/img/202111221439080.png)
+![](https://nehopicbed.oss-cn-beijing.aliyuncs.com/img/202111221439080.png)

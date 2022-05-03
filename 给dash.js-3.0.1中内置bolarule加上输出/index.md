@@ -12,7 +12,7 @@ npm install -g grunt-cli
 
 当然需要提前配好nodejs环境。安装完之后验证
 
-<img src="https://gitee.com/tanneho/pic/raw/master/img/202112181559902.png"  />
+<img src=" https://nehopicbed.oss-cn-beijing.aliyuncs.com/img/202112181559902.png"  />
 
 ### gurnt装不上怎么办
 
@@ -29,7 +29,7 @@ sudo vim /etc/profile
 export PATH=/root/nodejs/bin:$PATH
 ```
 
-<img src="https://gitee.com/tanneho/pic/raw/master/img/202112181606424.png" style="zoom:67%;" />
+<img src=" https://nehopicbed.oss-cn-beijing.aliyuncs.com/img/202112181606424.png" style="zoom:67%;" />
 
 最后记得再source一下
 
@@ -52,11 +52,11 @@ npm install # 注意这一步是必须要求grunt时已经安装好了的，否�
 grunt debug
 ```
 
-![](https://gitee.com/tanneho/pic/raw/master/img/202112181625688.png)
+![]( https://nehopicbed.oss-cn-beijing.aliyuncs.com/img/202112181625688.png)
 
 用grunt dev可以看得到我们的html目录在哪里
 
-![](https://gitee.com/tanneho/pic/raw/master/img/202112181628209.png)
+![]( https://nehopicbed.oss-cn-beijing.aliyuncs.com/img/202112181628209.png)
 
 ### 网站上线
 
@@ -77,7 +77,7 @@ sudo service nginx restart
 
 这里就随便在/src/streaming/rules/abr/BolaRule.js中输出一些东西，打包，运行即可。验证的确是执行了Bola算法了的即可。
 
-<img src="https://gitee.com/tanneho/pic/raw/master/img/202112182237372.png"  />
+<img src=" https://nehopicbed.oss-cn-beijing.aliyuncs.com/img/202112182237372.png"  />
 
 ### 添加输出量
 
@@ -116,15 +116,15 @@ sudo service nginx restart
 
 加上输出，跑了很多遍之后发现，每次输出来的chunksize大小块都是从index=4开始的，前四个块的信息并没有打印出来。但是肯定是下载了的。这一次的chunkerror原因不再是fastSwitch，我想了想，并没有执行到输出语句，那么一定是提前退出了。就这样排查到了`useBufferOccupancyABR`这个地方。
 
-<img src="https://gitee.com/tanneho/pic/raw/master/img/202112202203966.png"  />
+<img src=" https://nehopicbed.oss-cn-beijing.aliyuncs.com/img/202112202203966.png"  />
 
 这个地方从rulesContext中取出了`useBufferOccupancyABR`这个setting中的布尔值
 
-<img src="https://gitee.com/tanneho/pic/raw/master/img/202112202207457.png"  />
+<img src=" https://nehopicbed.oss-cn-beijing.aliyuncs.com/img/202112202207457.png"  />
 
 该变量在setting中的含义是：是否使用BOLA这个abr策略，默认值为false。
 
-![](https://gitee.com/tanneho/pic/raw/master/img/202112202212376.png)
+![]( https://nehopicbed.oss-cn-beijing.aliyuncs.com/img/202112202212376.png)
 
 我用的就是BOLA，它为false就很不合理。因此我直接把这句return注释掉了（逃🏃‍
 
@@ -135,7 +135,7 @@ sudo service nginx restart
 
 {{< /admonition >}}
 
-![](https://gitee.com/tanneho/pic/raw/master/img/202112231443777.png)
+![]( https://nehopicbed.oss-cn-beijing.aliyuncs.com/img/202112231443777.png)
 
 每次都是如此规整的6次非使用bola，中间伴随着两次mpd请求的问题，😶我仍然不知道是为什么。但是这里也可以看出来，两个红框里面的对于非media的请求，就是应该提前return出来。
 
