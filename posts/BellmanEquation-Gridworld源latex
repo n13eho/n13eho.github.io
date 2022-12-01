@@ -1,13 +1,30 @@
-# Bellman Equation: Gridworld
+---
+title: "Bellman Equation: Gridworld"
+subtitle: ""
+date: 2022-12-01T16:50:23+08:00
+draft: false
 
+summary: "--"
+
+tags: [BellmanEquation, RL]
+categories: [ML]
+
+hiddenFromHomePage: false
+hiddenFromSearch: false
+
+featuredImage: ""
+featuredImagePreview: ""
+
+license: '<a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a>'
+---
 
 ## 问题描述
 
 游戏规则：正常移动一次的奖励为0；出界时回到当前位置，奖励为-1；A位置选择任意方向都到达A’，奖励为+10；B位置选择任意方向都到达B’，奖励为+5； 折扣率y = 0.9。
 
-假定策略为；从每个格子等概率选择四个移动方向（行为）
+假定策略为；从每个格子等概率选择四个移动方向 （行为）
 
-<div align=center><img src="https://nehopicbed.oss-cn-beijing.aliyuncs.com/img/202212012302219.png" width="1300"></div>
+![](https://nehopicbed.oss-cn-beijing.aliyuncs.com/img/202212012302219.png)
 
 用Bellman Equation复现右边5*5的状态估值
 
@@ -17,23 +34,54 @@
 
 带入Bellman Equation：
 
-<div align=center><img src="https://nehopicbed.oss-cn-beijing.aliyuncs.com/img/202212020131357.png" width="400"></div>
+$$
+v_{\pi}(s) = \sum_{a}\pi(a|s)\sum_{s', r}p(s', r|s, a)[r + \gamma v_{\pi}s']
+$$
 
 对于在位置(0, 0)的状态：
-<div align=center><img src="https://nehopicbed.oss-cn-beijing.aliyuncs.com/img/202212020132263.png" width="400"></div>
 
+$$
+\begin{align}
+v_{\pi}(0) =
+ &\frac{1}{4}\sum_{s', r}p(s', r|s, a)[r + \gamma v_{\pi}(1)]\quad向右走\\
++&\frac{1}{4}\sum_{s', r}p(s', r|s, a)[r + \gamma v_{\pi}(😫)]\quad向左走\\
++&\frac{1}{4}\sum_{s', r}p(s', r|s, a)[r + \gamma v_{\pi}(5)]\quad向下走\\
++&\frac{1}{4}\sum_{s', r}p(s', r|s, a)[r + \gamma v_{\pi}(😫)]\quad向上走\\
+
+
+\end{align}
+$$
 
 对于这里的
 
-<div align=center><img src="https://nehopicbed.oss-cn-beijing.aliyuncs.com/img/202212020133409.png" width="300"></div>
+$$
+\sum_{s', r}p(s', r|s, a)[r + \gamma v_{\pi}(s')]
+$$
 
 除了特殊位置A和B外，其余都是`0 * [] + 0 * [] + 0 * [] + 1 * [0 + 0.9 * 下一个状态的估值]`，所以对于位置(0, 0)：
 
-<div align=center><img src="https://nehopicbed.oss-cn-beijing.aliyuncs.com/img/202212020134900.png" width="400"></div>
+$$
+\begin{align}
+v_{\pi}(0) =
+ &\frac{1}{4}[0 + 0.9  v_{\pi}(1)]\quad向右走\\
++&\frac{1}{4}[-1 + 0.9 v_{\pi}(0)]\quad向左走\\
++&\frac{1}{4}[0 + 0.9 v_{\pi}(5)]\quad向下走\\
++&\frac{1}{4}[-1 + 0.9 v_{\pi}(0)]\quad向上走\\
+\end{align}
+$$
+
+$$
+v_{\pi}(0) = \frac{9}{40}v_{\pi}(1) + \frac{9}{20}v_{\pi}(0) + \frac{9}{40}v_{\pi}(5) -\frac{1}{2}
+$$
 
 以此类推其余地方的点都一样，除了A点s(1)和B点s(3)
 
-<div align=center><img src="https://nehopicbed.oss-cn-beijing.aliyuncs.com/img/202212020134499.png" width="200"></div>
+$$
+\begin{align}
+v_{\pi}(1) &= 10 + 0.9v_{\pi}(21)\\
+v_{\pi}(3) &= 5 + 0.9v_{\pi}(13)
+\end{align}
+$$
 
 然后就是matlab coding得解：
 
@@ -76,6 +124,7 @@ ret = [
 [roundn(double(ret.v15),-1), roundn(double(ret.v16),-1) ,roundn(double(ret.v17),-1), roundn(double(ret.v18),-1), roundn(double(ret.v19),-1)],
 [roundn(double(ret.v20),-1), roundn(double(ret.v21),-1) ,roundn(double(ret.v22),-1), roundn(double(ret.v23),-1), roundn(double(ret.v24),-1)]
 ]
+
 ```
 
 但是结果出来ret.v0=211544423854643298169167140/63930087070970054436332951，G啊，咋回事？
@@ -84,6 +133,6 @@ ret = [
 
 噢噢看错了，是对的，中间还有个除号，下面是最后的结果：
 
-<div align=center><img src="https://nehopicbed.oss-cn-beijing.aliyuncs.com/img/202212020129949.png" width="500"></div>
+![](https://nehopicbed.oss-cn-beijing.aliyuncs.com/img/202212020129949.png)
 
 对得上

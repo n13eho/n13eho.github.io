@@ -9,7 +9,7 @@
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://neho.ink/bellmanequation-gridworld/"><meta property="og:image" content="https://neho.ink/classic-hh.png"><meta property="article:section" content="posts">
 <meta property="article:published_time" content="2022-12-01T16:50:23+08:00">
-<meta property="article:modified_time" content="2022-12-01T23:57:25+08:00">
+<meta property="article:modified_time" content="2022-12-02T01:43:48+08:00">
 <meta name=twitter:card content="summary_large_image">
 <meta name=twitter:image content="https://neho.ink/classic-hh.png">
 <meta name=twitter:title content="Bellman Equation: Gridworld">
@@ -17,7 +17,7 @@
 <meta name=application-name content="LoveIt">
 <meta name=apple-mobile-web-app-title content="LoveIt"><meta name=theme-color content="#ffffff"><meta name=msapplication-TileColor content="#da532c"><link rel="shortcut icon" type=image/x-icon href=/favicon.ico>
 <link rel=icon type=image/png sizes=32x32 href=/favicon-32x32.png>
-<link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png><link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png><link rel=mask-icon href=/safari-pinned-tab.svg color=#5bbad5><link rel=manifest href=/site.webmanifest><link rel=canonical href=https://neho.ink/bellmanequation-gridworld/><link rel=prev href=https://neho.ink/2021%E4%B8%80%E8%A7%88/><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.min.css><link rel=stylesheet href=/css/style.min.css><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.13.0/css/all.min.css><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/animate.css@3.7.2/animate.min.css><script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","headline":"Bellman Equation: Gridworld","inLanguage":"zh-CN","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/neho.ink\/bellmanequation-gridworld\/"},"image":["https:\/\/neho.ink\/images\/Apple-Devices-Preview.png"],"genre":"posts","keywords":"BellmanEquation, RL","wordcount":517,"url":"https:\/\/neho.ink\/bellmanequation-gridworld\/","datePublished":"2022-12-01T16:50:23+08:00","dateModified":"2022-12-01T23:57:25+08:00","license":"This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher":{"@type":"Organization","name":"xxxx","logo":"https:\/\/neho.ink\/images\/avatar.png"},"author":{"@type":"Person","name":"n13eho"},"description":""}</script></head>
+<link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png><link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png><link rel=mask-icon href=/safari-pinned-tab.svg color=#5bbad5><link rel=manifest href=/site.webmanifest><link rel=canonical href=https://neho.ink/bellmanequation-gridworld/><link rel=prev href=https://neho.ink/2021%E4%B8%80%E8%A7%88/><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.min.css><link rel=stylesheet href=/css/style.min.css><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.13.0/css/all.min.css><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/animate.css@3.7.2/animate.min.css><script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","headline":"Bellman Equation: Gridworld","inLanguage":"zh-CN","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/neho.ink\/bellmanequation-gridworld\/"},"image":["https:\/\/neho.ink\/images\/Apple-Devices-Preview.png"],"genre":"posts","keywords":"BellmanEquation, RL","wordcount":902,"url":"https:\/\/neho.ink\/bellmanequation-gridworld\/","datePublished":"2022-12-01T16:50:23+08:00","dateModified":"2022-12-02T01:43:48+08:00","license":"This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher":{"@type":"Organization","name":"xxxx","logo":"https:\/\/neho.ink\/images\/avatar.png"},"author":{"@type":"Person","name":"n13eho"},"description":""}</script></head>
 <body header-desktop=fixed header-mobile=auto><script type=text/javascript>(window.localStorage&&localStorage.getItem('theme')?localStorage.getItem('theme')==='dark':'auto'==='auto'?window.matchMedia('(prefers-color-scheme: dark)').matches:'auto'==='dark')&&document.body.setAttribute('theme','dark')</script>
 <div id=mask></div><div class=wrapper><header class=desktop id=header-desktop>
 <div class=header-wrapper>
@@ -85,7 +85,7 @@
 <div class="toc-content always-active" id=toc-content-auto></div>
 </div><article class="page single"><h1 class="single-title animated flipInX">Bellman Equation: Gridworld</h1><div class=post-meta>
 <div class=post-meta-line><span class=post-author><a href=neho.ink title=Author rel=" author" class=author><i class="fas fa-user-circle fa-fw"></i>n13eho</a></span>&nbsp;<span class=post-category>收录于 <a href=/categories/ml/><i class="far fa-folder fa-fw"></i>ML</a></span></div>
-<div class=post-meta-line><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime=2022-12-01>2022-12-01</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 517 字&nbsp;
+<div class=post-meta-line><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime=2022-12-01>2022-12-01</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 902 字&nbsp;
 <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 2 分钟&nbsp;<span id=/bellmanequation-gridworld/ class=leancloud_visitors data-flag-title="Bellman Equation: Gridworld">
 <i class="far fa-eye fa-fw"></i>&nbsp;<span class=leancloud-visitors-count></span>&nbsp;次阅读
 </span>&nbsp;</div>
@@ -102,45 +102,115 @@
 </nav></div>
 </div><div class=content id=content><h2 id=问题描述>问题描述</h2>
 <p>游戏规则：正常移动一次的奖励为0；出界时回到当前位置，奖励为-1；A位置选择任意方向都到达A’，奖励为+10；B位置选择任意方向都到达B’，奖励为+5； 折扣率y = 0.9。</p>
-<p>假定策略为；从每个格子等概率选择四个移动方向 （行为）</p>
-<p><img class=lazyload src=/svg/loading.min.svg data-src=https://nehopicbed.oss-cn-beijing.aliyuncs.com/img/202212012302219.png data-srcset="https://nehopicbed.oss-cn-beijing.aliyuncs.com/img/202212012302219.png, https://nehopicbed.oss-cn-beijing.aliyuncs.com/img/202212012302219.png 1.5x, https://nehopicbed.oss-cn-beijing.aliyuncs.com/img/202212012302219.png 2x" data-sizes=auto alt=https://nehopicbed.oss-cn-beijing.aliyuncs.com/img/202212012302219.png title=https://nehopicbed.oss-cn-beijing.aliyuncs.com/img/202212012302219.png></p>
+<p>假定策略为；从每个格子等概率选择四个移动方向（行为）</p>
+<div align=center><img src=https://nehopicbed.oss-cn-beijing.aliyuncs.com/img/202212012302219.png width=1300></div>
 <p>用Bellman Equation复现右边5*5的状态估值</p>
 <h2 id=解>解</h2>
 <p>记号规定：obj移动到左上角的状态：s(0, 0)/s(0)，移动到右下角的状态：s(4, 4)/s(24)</p>
 <p>带入Bellman Equation：</p>
-<p>$$
-v_{\pi}(s) = \sum_{a}\pi(a|s)\sum_{s', r}p(s', r|s, a)[r + \gamma v_{\pi}s']
-$$</p>
+<div align=center><img src=https://nehopicbed.oss-cn-beijing.aliyuncs.com/img/202212020131357.png width=400></div>
 <p>对于在位置(0, 0)的状态：</p>
-<p>$$
-\begin{align}
-v_{\pi}(0) =
-&\frac{1}{4}\sum_{s', r}p(s', r|s, a)[r + \gamma v_{\pi}s(1)]\quad向右走\<br>
-+&\frac{1}{4}\sum_{s', r}p(s', r|s, a)[r + \gamma v_{\pi}s(😫)]\quad向左走\<br>
-+&\frac{1}{4}\sum_{s', r}p(s', r|s, a)[r + \gamma v_{\pi}s(5)]\quad向下走\<br>
-+&\frac{1}{4}\sum_{s', r}p(s', r|s, a)[r + \gamma v_{\pi}s(😫)]\quad向上走\</p>
-<p>\end{align}
-$$</p>
+<div align=center><img src=https://nehopicbed.oss-cn-beijing.aliyuncs.com/img/202212020132263.png width=400></div>
 <p>对于这里的</p>
-<p>$$
-\sum_{s', r}p(s', r|s, a)[r + \gamma v_{\pi}s']
-$$</p>
+<div align=center><img src=https://nehopicbed.oss-cn-beijing.aliyuncs.com/img/202212020133409.png width=300></div>
 <p>除了特殊位置A和B外，其余都是<code>0 * [] + 0 * [] + 0 * [] + 1 * [0 + 0.9 * 下一个状态的估值]</code>，所以对于位置(0, 0)：</p>
-<p>$$
-\begin{align}
-v_{\pi}(0) =
-&\frac{1}{4}[0 + 0.9 v_{\pi}s(1)]\quad向右走\<br>
-+&\frac{1}{4}[-1 + 0.9 v_{\pi}s(0)]\quad向左走\<br>
-+&\frac{1}{4}[0 + 0.9 v_{\pi}s(5)]\quad向下走\<br>
-+&\frac{1}{4}[-1 + 0.9 v_{\pi}s(0)]\quad向上走\<br>
-\end{align}
-$$</p>
+<div align=center><img src=https://nehopicbed.oss-cn-beijing.aliyuncs.com/img/202212020134900.png width=400></div>
+<p>以此类推其余地方的点都一样，除了A点s(1)和B点s(3)</p>
+<div align=center><img src=https://nehopicbed.oss-cn-beijing.aliyuncs.com/img/202212020134499.png width=200></div>
+<p>然后就是matlab coding得解：</p>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span><span class=lnt>21
+</span><span class=lnt>22
+</span><span class=lnt>23
+</span><span class=lnt>24
+</span><span class=lnt>25
+</span><span class=lnt>26
+</span><span class=lnt>27
+</span><span class=lnt>28
+</span><span class=lnt>29
+</span><span class=lnt>30
+</span><span class=lnt>31
+</span><span class=lnt>32
+</span><span class=lnt>33
+</span><span class=lnt>34
+</span><span class=lnt>35
+</span><span class=lnt>36
+</span><span class=lnt>37
+</span><span class=lnt>38
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-matlab data-lang=matlab><span class=n>syms</span> <span class=n>v0</span> <span class=n>v1</span> <span class=n>v2</span> <span class=n>v3</span> <span class=n>v4</span> <span class=n>v5</span> <span class=n>v6</span> <span class=n>v7</span> <span class=n>v8</span> <span class=n>v9</span> <span class=n>v10</span> <span class=n>v11</span> <span class=n>v12</span> <span class=n>v13</span> <span class=n>v14</span> <span class=n>v15</span> <span class=n>v16</span> <span class=n>v17</span> <span class=n>v18</span> <span class=n>v19</span> <span class=n>v20</span> <span class=n>v21</span> <span class=n>v22</span> <span class=n>v23</span> <span class=n>v24</span><span class=p>;</span>
+
+<span class=n>eqns</span><span class=p>=[</span>
+    <span class=n>v0</span> <span class=o>==</span> <span class=p>(</span><span class=mi>9</span> <span class=o>/</span> <span class=mi>40</span><span class=p>)</span> <span class=o>*</span> <span class=n>v1</span> <span class=o>+</span> <span class=mi>9</span> <span class=o>/</span> <span class=mi>20</span> <span class=o>*</span> <span class=n>v0</span> <span class=o>+</span> <span class=p>(</span><span class=mi>9</span> <span class=o>/</span> <span class=mi>40</span><span class=p>)</span> <span class=o>*</span> <span class=n>v5</span> <span class=o>-</span> <span class=mf>0.5</span><span class=p>,</span>
+    <span class=n>v1</span> <span class=o>==</span> <span class=mi>10</span> <span class=o>+</span> <span class=mf>0.9</span> <span class=o>*</span> <span class=n>v21</span><span class=p>,</span>
+    <span class=n>v2</span> <span class=o>==</span> <span class=p>(</span><span class=mi>9</span> <span class=o>/</span> <span class=mi>40</span><span class=p>)</span> <span class=o>*</span> <span class=p>(</span><span class=n>v3</span> <span class=o>+</span> <span class=n>v1</span> <span class=o>+</span> <span class=n>v2</span> <span class=o>+</span> <span class=n>v7</span><span class=p>)</span> <span class=o>-</span> <span class=mf>0.25</span><span class=p>,</span>
+    <span class=n>v3</span> <span class=o>==</span> <span class=mi>5</span> <span class=o>+</span> <span class=mf>0.9</span> <span class=o>*</span> <span class=n>v13</span><span class=p>,</span>
+    <span class=n>v4</span> <span class=o>==</span> <span class=p>(</span><span class=mi>9</span> <span class=o>/</span> <span class=mi>40</span><span class=p>)</span> <span class=o>*</span> <span class=p>(</span><span class=n>v3</span> <span class=o>+</span> <span class=n>v9</span> <span class=o>+</span> <span class=mi>2</span> <span class=o>*</span> <span class=n>v4</span><span class=p>)</span> <span class=o>-</span> <span class=mf>0.5</span><span class=p>,</span>
+    <span class=n>v5</span> <span class=o>==</span> <span class=p>(</span><span class=mi>9</span> <span class=o>/</span> <span class=mi>40</span><span class=p>)</span> <span class=o>*</span> <span class=p>(</span><span class=n>v5</span> <span class=o>+</span> <span class=n>v6</span> <span class=o>+</span> <span class=n>v0</span> <span class=o>+</span> <span class=n>v10</span><span class=p>)</span> <span class=o>-</span> <span class=mf>0.25</span><span class=p>,</span>
+    <span class=n>v6</span> <span class=o>==</span> <span class=p>(</span><span class=mi>9</span> <span class=o>/</span> <span class=mi>40</span><span class=p>)</span> <span class=o>*</span> <span class=p>(</span><span class=n>v1</span> <span class=o>+</span> <span class=n>v5</span> <span class=o>+</span> <span class=n>v7</span> <span class=o>+</span> <span class=n>v11</span><span class=p>),</span>
+    <span class=n>v7</span> <span class=o>==</span> <span class=p>(</span><span class=mi>9</span> <span class=o>/</span> <span class=mi>40</span><span class=p>)</span> <span class=o>*</span> <span class=p>(</span><span class=n>v2</span> <span class=o>+</span> <span class=n>v6</span> <span class=o>+</span> <span class=n>v8</span> <span class=o>+</span> <span class=n>v12</span><span class=p>),</span>
+    <span class=n>v8</span> <span class=o>==</span> <span class=p>(</span><span class=mi>9</span> <span class=o>/</span> <span class=mi>40</span><span class=p>)</span> <span class=o>*</span> <span class=p>(</span><span class=n>v3</span> <span class=o>+</span> <span class=n>v7</span> <span class=o>+</span> <span class=n>v9</span> <span class=o>+</span> <span class=n>v13</span><span class=p>),</span>
+    <span class=n>v9</span> <span class=o>==</span> <span class=p>(</span><span class=mi>9</span> <span class=o>/</span> <span class=mi>40</span><span class=p>)</span> <span class=o>*</span> <span class=p>(</span><span class=n>v4</span> <span class=o>+</span> <span class=n>v8</span> <span class=o>+</span> <span class=n>v9</span> <span class=o>+</span> <span class=n>v14</span><span class=p>)</span> <span class=o>-</span> <span class=mf>0.25</span><span class=p>,</span>
+    <span class=n>v10</span> <span class=o>==</span> <span class=p>(</span><span class=mi>9</span> <span class=o>/</span> <span class=mi>40</span><span class=p>)</span> <span class=o>*</span> <span class=p>(</span><span class=n>v5</span> <span class=o>+</span> <span class=n>v10</span> <span class=o>+</span> <span class=n>v11</span> <span class=o>+</span> <span class=n>v15</span><span class=p>)</span> <span class=o>-</span> <span class=mf>0.25</span><span class=p>,</span>
+    <span class=n>v11</span> <span class=o>==</span> <span class=p>(</span><span class=mi>9</span> <span class=o>/</span> <span class=mi>40</span><span class=p>)</span> <span class=o>*</span> <span class=p>(</span><span class=n>v6</span> <span class=o>+</span> <span class=n>v10</span> <span class=o>+</span> <span class=n>v12</span> <span class=o>+</span> <span class=n>v16</span><span class=p>),</span>
+    <span class=n>v12</span> <span class=o>==</span> <span class=p>(</span><span class=mi>9</span> <span class=o>/</span> <span class=mi>40</span><span class=p>)</span> <span class=o>*</span> <span class=p>(</span><span class=n>v7</span> <span class=o>+</span> <span class=n>v11</span> <span class=o>+</span> <span class=n>v13</span> <span class=o>+</span> <span class=n>v17</span><span class=p>),</span>
+    <span class=n>v13</span> <span class=o>==</span> <span class=p>(</span><span class=mi>9</span> <span class=o>/</span> <span class=mi>40</span><span class=p>)</span> <span class=o>*</span> <span class=p>(</span><span class=n>v8</span> <span class=o>+</span> <span class=n>v12</span> <span class=o>+</span> <span class=n>v14</span> <span class=o>+</span> <span class=n>v18</span><span class=p>),</span>
+    <span class=n>v14</span> <span class=o>==</span> <span class=p>(</span><span class=mi>9</span> <span class=o>/</span> <span class=mi>40</span><span class=p>)</span> <span class=o>*</span> <span class=p>(</span><span class=n>v9</span> <span class=o>+</span> <span class=n>v13</span> <span class=o>+</span> <span class=n>v14</span> <span class=o>+</span> <span class=n>v19</span><span class=p>)</span> <span class=o>-</span> <span class=mf>0.25</span><span class=p>,</span>
+    <span class=n>v15</span> <span class=o>==</span> <span class=p>(</span><span class=mi>9</span> <span class=o>/</span> <span class=mi>40</span><span class=p>)</span> <span class=o>*</span> <span class=p>(</span><span class=n>v15</span> <span class=o>+</span> <span class=n>v10</span> <span class=o>+</span> <span class=n>v16</span> <span class=o>+</span> <span class=n>v20</span><span class=p>)</span> <span class=o>-</span> <span class=mf>0.25</span><span class=p>,</span>
+    <span class=n>v16</span> <span class=o>==</span> <span class=p>(</span><span class=mi>9</span> <span class=o>/</span> <span class=mi>40</span><span class=p>)</span> <span class=o>*</span> <span class=p>(</span><span class=n>v11</span> <span class=o>+</span> <span class=n>v15</span> <span class=o>+</span> <span class=n>v17</span> <span class=o>+</span> <span class=n>v21</span><span class=p>),</span>
+    <span class=n>v17</span> <span class=o>==</span> <span class=p>(</span><span class=mi>9</span> <span class=o>/</span> <span class=mi>40</span><span class=p>)</span> <span class=o>*</span> <span class=p>(</span><span class=n>v12</span> <span class=o>+</span> <span class=n>v16</span> <span class=o>+</span> <span class=n>v18</span> <span class=o>+</span> <span class=n>v22</span><span class=p>),</span>
+    <span class=n>v18</span> <span class=o>==</span> <span class=p>(</span><span class=mi>9</span> <span class=o>/</span> <span class=mi>40</span><span class=p>)</span> <span class=o>*</span> <span class=p>(</span><span class=n>v13</span> <span class=o>+</span> <span class=n>v17</span> <span class=o>+</span> <span class=n>v19</span> <span class=o>+</span> <span class=n>v23</span><span class=p>),</span>
+    <span class=n>v19</span> <span class=o>==</span> <span class=p>(</span><span class=mi>9</span> <span class=o>/</span> <span class=mi>40</span><span class=p>)</span> <span class=o>*</span> <span class=p>(</span><span class=n>v14</span> <span class=o>+</span> <span class=n>v18</span> <span class=o>+</span> <span class=n>v19</span> <span class=o>+</span> <span class=n>v24</span><span class=p>)</span> <span class=o>-</span> <span class=mf>0.25</span><span class=p>,</span>
+    <span class=n>v20</span> <span class=o>==</span> <span class=p>(</span><span class=mi>9</span> <span class=o>/</span> <span class=mi>40</span><span class=p>)</span> <span class=o>*</span> <span class=p>(</span><span class=n>v15</span> <span class=o>+</span> <span class=n>v21</span> <span class=o>+</span> <span class=mi>2</span> <span class=o>*</span> <span class=n>v20</span><span class=p>)</span> <span class=o>-</span> <span class=mf>0.5</span><span class=p>,</span>
+    <span class=n>v21</span> <span class=o>==</span> <span class=p>(</span><span class=mi>9</span> <span class=o>/</span> <span class=mi>40</span><span class=p>)</span> <span class=o>*</span> <span class=p>(</span><span class=n>v16</span> <span class=o>+</span> <span class=n>v20</span> <span class=o>+</span> <span class=n>v21</span> <span class=o>+</span> <span class=n>v22</span><span class=p>)</span> <span class=o>-</span> <span class=mf>0.25</span><span class=p>,</span>
+    <span class=n>v22</span> <span class=o>==</span> <span class=p>(</span><span class=mi>9</span> <span class=o>/</span> <span class=mi>40</span><span class=p>)</span> <span class=o>*</span> <span class=p>(</span><span class=n>v17</span> <span class=o>+</span> <span class=n>v21</span> <span class=o>+</span> <span class=n>v22</span> <span class=o>+</span> <span class=n>v23</span><span class=p>)</span> <span class=o>-</span> <span class=mf>0.25</span><span class=p>,</span>
+    <span class=n>v23</span> <span class=o>==</span> <span class=p>(</span><span class=mi>9</span> <span class=o>/</span> <span class=mi>40</span><span class=p>)</span> <span class=o>*</span> <span class=p>(</span><span class=n>v18</span> <span class=o>+</span> <span class=n>v22</span> <span class=o>+</span> <span class=n>v23</span> <span class=o>+</span> <span class=n>v24</span><span class=p>)</span> <span class=o>-</span> <span class=mf>0.25</span><span class=p>,</span>
+    <span class=n>v24</span> <span class=o>==</span> <span class=p>(</span><span class=mi>9</span> <span class=o>/</span> <span class=mi>40</span><span class=p>)</span> <span class=o>*</span> <span class=p>(</span><span class=n>v19</span> <span class=o>+</span> <span class=n>v23</span> <span class=o>+</span> <span class=mi>2</span> <span class=o>*</span> <span class=n>v24</span><span class=p>)</span> <span class=o>-</span> <span class=mf>0.5</span><span class=p>,</span>
+    <span class=p>];</span> 
+<span class=n>vars</span><span class=p>=[</span><span class=n>v0</span><span class=p>,</span> <span class=n>v1</span><span class=p>,</span> <span class=n>v2</span><span class=p>,</span> <span class=n>v3</span><span class=p>,</span> <span class=n>v4</span><span class=p>,</span> <span class=n>v5</span><span class=p>,</span> <span class=n>v6</span><span class=p>,</span> <span class=n>v7</span><span class=p>,</span> <span class=n>v8</span><span class=p>,</span> <span class=n>v9</span><span class=p>,</span> <span class=n>v10</span><span class=p>,</span> <span class=n>v11</span><span class=p>,</span> <span class=n>v12</span><span class=p>,</span> <span class=n>v13</span><span class=p>,</span> <span class=n>v14</span><span class=p>,</span> <span class=n>v15</span><span class=p>,</span> <span class=n>v16</span><span class=p>,</span> <span class=n>v17</span><span class=p>,</span> <span class=n>v18</span><span class=p>,</span> <span class=n>v19</span><span class=p>,</span> <span class=n>v20</span><span class=p>,</span> <span class=n>v21</span><span class=p>,</span> <span class=n>v22</span><span class=p>,</span> <span class=n>v23</span><span class=p>,</span> <span class=n>v24</span><span class=p>];</span>
+<span class=n>ret</span><span class=p>=</span><span class=n>solve</span><span class=p>(</span><span class=n>eqns</span><span class=p>,</span><span class=n>vars</span><span class=p>);</span>
+<span class=n>ret</span> <span class=p>=</span> <span class=p>[</span>
+<span class=p>[</span><span class=n>roundn</span><span class=p>(</span><span class=n>double</span><span class=p>(</span><span class=n>ret</span><span class=p>.</span><span class=n>v0</span><span class=p>),</span><span class=o>-</span><span class=mi>1</span><span class=p>),</span> <span class=n>roundn</span><span class=p>(</span><span class=n>double</span><span class=p>(</span><span class=n>ret</span><span class=p>.</span><span class=n>v1</span><span class=p>),</span><span class=o>-</span><span class=mi>1</span><span class=p>)</span> <span class=p>,</span><span class=n>roundn</span><span class=p>(</span><span class=n>double</span><span class=p>(</span><span class=n>ret</span><span class=p>.</span><span class=n>v2</span><span class=p>),</span><span class=o>-</span><span class=mi>1</span><span class=p>),</span> <span class=n>roundn</span><span class=p>(</span><span class=n>double</span><span class=p>(</span><span class=n>ret</span><span class=p>.</span><span class=n>v3</span><span class=p>),</span><span class=o>-</span><span class=mi>1</span><span class=p>),</span> <span class=n>roundn</span><span class=p>(</span><span class=n>double</span><span class=p>(</span><span class=n>ret</span><span class=p>.</span><span class=n>v4</span><span class=p>),</span><span class=o>-</span><span class=mi>1</span><span class=p>)],</span>
+<span class=p>[</span><span class=n>roundn</span><span class=p>(</span><span class=n>double</span><span class=p>(</span><span class=n>ret</span><span class=p>.</span><span class=n>v5</span><span class=p>),</span><span class=o>-</span><span class=mi>1</span><span class=p>),</span> <span class=n>roundn</span><span class=p>(</span><span class=n>double</span><span class=p>(</span><span class=n>ret</span><span class=p>.</span><span class=n>v6</span><span class=p>),</span><span class=o>-</span><span class=mi>1</span><span class=p>)</span> <span class=p>,</span><span class=n>roundn</span><span class=p>(</span><span class=n>double</span><span class=p>(</span><span class=n>ret</span><span class=p>.</span><span class=n>v7</span><span class=p>),</span><span class=o>-</span><span class=mi>1</span><span class=p>),</span> <span class=n>roundn</span><span class=p>(</span><span class=n>double</span><span class=p>(</span><span class=n>ret</span><span class=p>.</span><span class=n>v8</span><span class=p>),</span><span class=o>-</span><span class=mi>1</span><span class=p>),</span> <span class=n>roundn</span><span class=p>(</span><span class=n>double</span><span class=p>(</span><span class=n>ret</span><span class=p>.</span><span class=n>v9</span><span class=p>),</span><span class=o>-</span><span class=mi>1</span><span class=p>)],</span>
+<span class=p>[</span><span class=n>roundn</span><span class=p>(</span><span class=n>double</span><span class=p>(</span><span class=n>ret</span><span class=p>.</span><span class=n>v10</span><span class=p>),</span><span class=o>-</span><span class=mi>1</span><span class=p>),</span> <span class=n>roundn</span><span class=p>(</span><span class=n>double</span><span class=p>(</span><span class=n>ret</span><span class=p>.</span><span class=n>v11</span><span class=p>),</span><span class=o>-</span><span class=mi>1</span><span class=p>)</span> <span class=p>,</span><span class=n>roundn</span><span class=p>(</span><span class=n>double</span><span class=p>(</span><span class=n>ret</span><span class=p>.</span><span class=n>v12</span><span class=p>),</span><span class=o>-</span><span class=mi>1</span><span class=p>),</span> <span class=n>roundn</span><span class=p>(</span><span class=n>double</span><span class=p>(</span><span class=n>ret</span><span class=p>.</span><span class=n>v13</span><span class=p>),</span><span class=o>-</span><span class=mi>1</span><span class=p>),</span> <span class=n>roundn</span><span class=p>(</span><span class=n>double</span><span class=p>(</span><span class=n>ret</span><span class=p>.</span><span class=n>v14</span><span class=p>),</span><span class=o>-</span><span class=mi>1</span><span class=p>)],</span>
+<span class=p>[</span><span class=n>roundn</span><span class=p>(</span><span class=n>double</span><span class=p>(</span><span class=n>ret</span><span class=p>.</span><span class=n>v15</span><span class=p>),</span><span class=o>-</span><span class=mi>1</span><span class=p>),</span> <span class=n>roundn</span><span class=p>(</span><span class=n>double</span><span class=p>(</span><span class=n>ret</span><span class=p>.</span><span class=n>v16</span><span class=p>),</span><span class=o>-</span><span class=mi>1</span><span class=p>)</span> <span class=p>,</span><span class=n>roundn</span><span class=p>(</span><span class=n>double</span><span class=p>(</span><span class=n>ret</span><span class=p>.</span><span class=n>v17</span><span class=p>),</span><span class=o>-</span><span class=mi>1</span><span class=p>),</span> <span class=n>roundn</span><span class=p>(</span><span class=n>double</span><span class=p>(</span><span class=n>ret</span><span class=p>.</span><span class=n>v18</span><span class=p>),</span><span class=o>-</span><span class=mi>1</span><span class=p>),</span> <span class=n>roundn</span><span class=p>(</span><span class=n>double</span><span class=p>(</span><span class=n>ret</span><span class=p>.</span><span class=n>v19</span><span class=p>),</span><span class=o>-</span><span class=mi>1</span><span class=p>)],</span>
+<span class=p>[</span><span class=n>roundn</span><span class=p>(</span><span class=n>double</span><span class=p>(</span><span class=n>ret</span><span class=p>.</span><span class=n>v20</span><span class=p>),</span><span class=o>-</span><span class=mi>1</span><span class=p>),</span> <span class=n>roundn</span><span class=p>(</span><span class=n>double</span><span class=p>(</span><span class=n>ret</span><span class=p>.</span><span class=n>v21</span><span class=p>),</span><span class=o>-</span><span class=mi>1</span><span class=p>)</span> <span class=p>,</span><span class=n>roundn</span><span class=p>(</span><span class=n>double</span><span class=p>(</span><span class=n>ret</span><span class=p>.</span><span class=n>v22</span><span class=p>),</span><span class=o>-</span><span class=mi>1</span><span class=p>),</span> <span class=n>roundn</span><span class=p>(</span><span class=n>double</span><span class=p>(</span><span class=n>ret</span><span class=p>.</span><span class=n>v23</span><span class=p>),</span><span class=o>-</span><span class=mi>1</span><span class=p>),</span> <span class=n>roundn</span><span class=p>(</span><span class=n>double</span><span class=p>(</span><span class=n>ret</span><span class=p>.</span><span class=n>v24</span><span class=p>),</span><span class=o>-</span><span class=mi>1</span><span class=p>)]</span>
+<span class=p>]</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>但是结果出来ret.v0=211544423854643298169167140/63930087070970054436332951，G啊，咋回事？</p>
+<hr>
+<p>噢噢看错了，是对的，中间还有个除号，下面是最后的结果：</p>
+<div align=center><img src=https://nehopicbed.oss-cn-beijing.aliyuncs.com/img/202212020129949.png width=500></div>
+<p>对得上</p>
 </div><div class=post-footer id=post-footer>
 <div class=post-info>
 <div class=post-info-line>
 <div class=post-info-mod>
-<span>更新于 2022-12-01&nbsp;<a class=git-hash href=https://github.com/dillonzq/LoveIt/commit/dde7f857e41d4b3ea39d8353ad7e910e07c3763b target=_blank title="commit by n13eho(614275359@qq.com) dde7f857e41d4b3ea39d8353ad7e910e07c3763b: new post(undone)">
-<i class="fas fa-hashtag fa-fw"></i>dde7f85</a></span>
+<span>更新于 2022-12-02&nbsp;<a class=git-hash href=https://github.com/dillonzq/LoveIt/commit/db7072e18960a291c72672a09c65cb55e3b20ae1 target=_blank title="commit by n13eho(614275359@qq.com) db7072e18960a291c72672a09c65cb55e3b20ae1: little matlab game over">
+<i class="fas fa-hashtag fa-fw"></i>db7072e</a></span>
 </div>
 <div class=post-info-license><span><a rel="license external nofollow noopener noreffer" href=https://creativecommons.org/licenses/by-nc/4.0/ target=_blank>CC BY-NC 4.0</a></span></div>
 </div>
