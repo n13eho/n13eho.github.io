@@ -69,7 +69,7 @@ public static final int RSSI_LEVELS = 5;
 
 ```java
 public int getLteLevel() {
-	return mLte.getLevel();
+    return mLte.getLevel();
 }
 ```
 
@@ -84,8 +84,6 @@ public int getLevel() {
 这里是直接返回了`mLevel`这个全局变量。
 
 在方法`setDefaultValues()`中，对它进行了初始化，值为`SIGNAL_STRENGTH_NONE_OR_UNKNOWN`，不难发现还有另外一个方法在更新信号的level， `updateLevel(PersistableBundle cc, ServiceState ss)`，line275
-
-
 
 ### 结论
 
