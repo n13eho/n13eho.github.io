@@ -20,8 +20,8 @@
 <div align=center><img src="https://nehopicbed.oss-cn-beijing.aliyuncs.com/img/202212020131357.png" width="400"></div>
 
 对于在位置(0, 0)的状态：
-<div align=center><img src="https://nehopicbed.oss-cn-beijing.aliyuncs.com/img/202212020132263.png" width="400"></div>
 
+<div align=center><img src="https://nehopicbed.oss-cn-beijing.aliyuncs.com/img/202212020132263.png" width="400"></div>
 
 对于这里的
 
@@ -84,6 +84,6 @@ ret = [
 
 噢噢看错了，是对的，中间还有个除号，下面是最后的结果：
 
-<div align=center><img src="https://nehopicbed.oss-cn-beijing.aliyuncs.com/img/202212020129949.png" width="500"></div>
+<div align=center><img src="https://nehopicbed.oss-cn-beijing.aliyuncs.com/img/202212020129949.png" width="600"></div>
 
 对得上
