@@ -17,7 +17,7 @@
 <meta name=application-name content="LoveIt">
 <meta name=apple-mobile-web-app-title content="LoveIt"><meta name=theme-color content="#ffffff"><meta name=msapplication-TileColor content="#da532c"><link rel="shortcut icon" type=image/x-icon href=/favicon.ico>
 <link rel=icon type=image/png sizes=32x32 href=/favicon-32x32.png>
-<link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png><link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png><link rel=mask-icon href=/safari-pinned-tab.svg color=#5bbad5><link rel=manifest href=/site.webmanifest><link rel=canonical href=https://neho.ink/pensieve%E5%A4%8D%E7%8E%B0/><link rel=prev href=https://neho.ink/runsigcomm21-5g/><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.min.css><link rel=stylesheet href=/css/style.min.css><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.13.0/css/all.min.css><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/animate.css@3.7.2/animate.min.css><script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","headline":"Pensieve复现","inLanguage":"zh-CN","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/neho.ink\/pensieve%E5%A4%8D%E7%8E%B0\/"},"image":["https:\/\/neho.ink\/images\/Apple-Devices-Preview.png"],"genre":"posts","keywords":"配环境, 论文复现","wordcount":5127,"url":"https:\/\/neho.ink\/pensieve%E5%A4%8D%E7%8E%B0\/","datePublished":"2023-02-10T09:27:34+08:00","dateModified":"2023-02-10T09:27:34+08:00","license":"This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher":{"@type":"Organization","name":"xxxx","logo":"https:\/\/neho.ink\/images\/avatar.png"},"author":{"@type":"Person","name":"n13eho"},"description":""}</script></head>
+<link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png><link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png><link rel=mask-icon href=/safari-pinned-tab.svg color=#5bbad5><link rel=manifest href=/site.webmanifest><link rel=canonical href=https://neho.ink/pensieve%E5%A4%8D%E7%8E%B0/><link rel=prev href=https://neho.ink/runsigcomm21-5g/><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.min.css><link rel=stylesheet href=/css/style.min.css><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.13.0/css/all.min.css><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/animate.css@3.7.2/animate.min.css><script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","headline":"Pensieve复现","inLanguage":"zh-CN","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/neho.ink\/pensieve%E5%A4%8D%E7%8E%B0\/"},"image":["https:\/\/neho.ink\/images\/Apple-Devices-Preview.png"],"genre":"posts","keywords":"配环境, 论文复现","wordcount":5373,"url":"https:\/\/neho.ink\/pensieve%E5%A4%8D%E7%8E%B0\/","datePublished":"2023-02-10T09:27:34+08:00","dateModified":"2023-02-10T09:27:34+08:00","license":"This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher":{"@type":"Organization","name":"xxxx","logo":"https:\/\/neho.ink\/images\/avatar.png"},"author":{"@type":"Person","name":"n13eho"},"description":""}</script></head>
 <body header-desktop=fixed header-mobile=auto><script type=text/javascript>(window.localStorage&&localStorage.getItem('theme')?localStorage.getItem('theme')==='dark':'auto'==='auto'?window.matchMedia('(prefers-color-scheme: dark)').matches:'auto'==='dark')&&document.body.setAttribute('theme','dark')</script>
 <div id=mask></div><div class=wrapper><header class=desktop id=header-desktop>
 <div class=header-wrapper>
@@ -85,7 +85,7 @@
 <div class="toc-content always-active" id=toc-content-auto></div>
 </div><article class="page single"><h1 class="single-title animated flipInX">Pensieve复现</h1><div class=post-meta>
 <div class=post-meta-line><span class=post-author><a href=neho.ink title=Author rel=" author" class=author><i class="fas fa-user-circle fa-fw"></i>n13eho</a></span>&nbsp;<span class=post-category>收录于 <a href=/categories/abrsim/><i class="far fa-folder fa-fw"></i>ABRsim</a></span></div>
-<div class=post-meta-line><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime=2023-02-10>2023-02-10</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 5127 字&nbsp;
+<div class=post-meta-line><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime=2023-02-10>2023-02-10</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 5373 字&nbsp;
 <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 11 分钟&nbsp;<span id=/pensieve%E5%A4%8D%E7%8E%B0/ class=leancloud_visitors data-flag-title=Pensieve复现>
 <i class="far fa-eye fa-fw"></i>&nbsp;<span class=leancloud-visitors-count></span>&nbsp;次阅读
 </span>&nbsp;</div>
@@ -124,6 +124,7 @@
 </li>
 <li><a href=#5-运行>5 运行</a></li>
 <li><a href=#6-结果>6 结果</a></li>
+<li><a href=#7-添加一个新的abr需要做的事情>7 添加一个新的ABR需要做的事情</a></li>
 </ul>
 </nav></div>
 </div><div class=content id=content><p>仓库地址：<a href=https://github.com/hongzimao/pensieve target=_blank rel="noopener noreffer">GitHub - hongzimao/pensieve: Neural Adaptive Video Streaming with Pensieve (SIGCOMM '17)</a></p>
@@ -418,6 +419,9 @@ PING 100.64.0.3 <span class=o>(</span>100.64.0.3<span class=o>)</span> 56<span c
 <h2 id=5-运行>5 运行</h2>
 <p>开的2G内存的虚拟机一次性同时跑完所有的实验是不可能的。。。跑一晚上一个完整的log都出不来；耗时长，并且可能导致死机，可以像作者团队那样分几个机器来跑。这个虚拟机就开一个线程来跑，每次跑一个算法即可。</p>
 <h2 id=6-结果>6 结果</h2>
+<h2 id=7-添加一个新的abr需要做的事情>7 添加一个新的ABR需要做的事情</h2>
+<p>前面提到，添加新的abr算法可以有两途径，区别是算法逻辑所在的位置：a)放在dashjs中；b)放在python的server中，卸载post方法里面。无论哪种都会需要dashjs层面上的改动，重新编译以及可能重新添加一个html文件。</p>
+<p>经观察，凡用python这边rl_server做决策的ABR，他们对应的请求html文件都一样，也就是说新的abr算法也都用同一个html文件。所以这里选择这种方法，这样就无需再用grunt编译整个前端dashjs的部分了。</p>
 </div><div class=post-footer id=post-footer>
 <div class=post-info>
 <div class=post-info-line>
