@@ -4,20 +4,20 @@
 <meta name=viewport content="width=device-width,initial-scale=1">
 <meta name=robots content="noodp">
 <meta http-equiv=x-ua-compatible content="IE=edge, chrome=1">
-<title>Hello, world - n13eho's blog</title><meta name=Description content="关于 LoveIt 主题"><meta property="og:title" content="Hello, world">
-<meta property="og:description" content="你好哇">
+<title>MAHIMAHI格式理解和转化逻辑 - n13eho's blog</title><meta name=Description content="关于 LoveIt 主题"><meta property="og:title" content="MAHIMAHI格式理解和转化逻辑">
+<meta property="og:description" content="我悟了！我彻底悟了！中间的idletime没有算在里面">
 <meta property="og:type" content="article">
-<meta property="og:url" content="https://neho.ink/helloworld/"><meta property="og:image" content="https://neho.ink/classic-hh.png"><meta property="article:section" content="posts">
-<meta property="article:published_time" content="2021-11-21T21:34:00+08:00">
+<meta property="og:url" content="https://neho.ink/mahimahiformatandtransform/"><meta property="og:image" content="https://neho.ink/classic-hh.png"><meta property="article:section" content="posts">
+<meta property="article:published_time" content="2023-03-24T15:29:29+08:00">
 <meta property="article:modified_time" content="2023-03-24T23:09:40+08:00">
 <meta name=twitter:card content="summary_large_image">
 <meta name=twitter:image content="https://neho.ink/classic-hh.png">
-<meta name=twitter:title content="Hello, world">
-<meta name=twitter:description content="你好哇">
+<meta name=twitter:title content="MAHIMAHI格式理解和转化逻辑">
+<meta name=twitter:description content="我悟了！我彻底悟了！中间的idletime没有算在里面">
 <meta name=application-name content="LoveIt">
 <meta name=apple-mobile-web-app-title content="LoveIt"><meta name=theme-color content="#ffffff"><meta name=msapplication-TileColor content="#da532c"><link rel="shortcut icon" type=image/x-icon href=/favicon.ico>
 <link rel=icon type=image/png sizes=32x32 href=/favicon-32x32.png>
-<link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png><link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png><link rel=mask-icon href=/safari-pinned-tab.svg color=#5bbad5><link rel=manifest href=/site.webmanifest><link rel=canonical href=https://neho.ink/helloworld/><link rel=next href=https://neho.ink/dash.js-4.1.1%E7%9A%84%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE%E5%92%8C%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3/><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.min.css><link rel=stylesheet href=/css/style.min.css><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.13.0/css/all.min.css><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/animate.css@3.7.2/animate.min.css><script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","headline":"Hello, world","inLanguage":"zh-CN","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/neho.ink\/helloworld\/"},"image":["https:\/\/neho.ink\/images\/Apple-Devices-Preview.png"],"genre":"posts","wordcount":3,"url":"https:\/\/neho.ink\/helloworld\/","datePublished":"2021-11-21T21:34:00+08:00","dateModified":"2023-03-24T23:09:40+08:00","license":"This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher":{"@type":"Organization","name":"xxxx","logo":"https:\/\/neho.ink\/images\/avatar.png"},"author":{"@type":"Person","name":"n13eho"},"description":""}</script></head>
+<link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png><link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png><link rel=mask-icon href=/safari-pinned-tab.svg color=#5bbad5><link rel=manifest href=/site.webmanifest><link rel=canonical href=https://neho.ink/mahimahiformatandtransform/><link rel=prev href=https://neho.ink/pensieve%E5%A4%8D%E7%8E%B0/><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.min.css><link rel=stylesheet href=/css/style.min.css><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.13.0/css/all.min.css><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/animate.css@3.7.2/animate.min.css><script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","headline":"MAHIMAHI格式理解和转化逻辑","inLanguage":"zh-CN","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/neho.ink\/mahimahiformatandtransform\/"},"image":["https:\/\/neho.ink\/images\/Apple-Devices-Preview.png"],"genre":"posts","keywords":"mahimahi, 仿真","wordcount":1283,"url":"https:\/\/neho.ink\/mahimahiformatandtransform\/","datePublished":"2023-03-24T15:29:29+08:00","dateModified":"2023-03-24T23:09:40+08:00","license":"This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher":{"@type":"Organization","name":"xxxx","logo":"https:\/\/neho.ink\/images\/avatar.png"},"author":{"@type":"Person","name":"n13eho"},"description":""}</script></head>
 <body header-desktop=fixed header-mobile=auto><script type=text/javascript>(window.localStorage&&localStorage.getItem('theme')?localStorage.getItem('theme')==='dark':'auto'==='auto'?window.matchMedia('(prefers-color-scheme: dark)').matches:'auto'==='dark')&&document.body.setAttribute('theme','dark')</script>
 <div id=mask></div><div class=wrapper><header class=desktop id=header-desktop>
 <div class=header-wrapper>
@@ -83,10 +83,10 @@
 <div class=container><div class=toc id=toc-auto>
 <h2 class=toc-title>目录</h2>
 <div class="toc-content always-active" id=toc-content-auto></div>
-</div><article class="page single"><h1 class="single-title animated flipInX">Hello, world</h1><h2 class=single-subtitle>请于星空中寻找我</h2><div class=post-meta>
-<div class=post-meta-line><span class=post-author><a href=neho.ink title=Author rel=" author" class=author><i class="fas fa-user-circle fa-fw"></i>n13eho</a></span>&nbsp;<span class=post-category>收录于 <a href=/categories/%E9%9A%8F%E6%83%B3/><i class="far fa-folder fa-fw"></i>随想</a></span></div>
-<div class=post-meta-line><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime=2021-11-21>2021-11-21</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 3 字&nbsp;
-<i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 1 分钟&nbsp;<span id=/helloworld/ class=leancloud_visitors data-flag-title="Hello, world">
+</div><article class="page single"><h1 class="single-title animated flipInX">MAHIMAHI格式理解和转化逻辑</h1><div class=post-meta>
+<div class=post-meta-line><span class=post-author><a href=neho.ink title=Author rel=" author" class=author><i class="fas fa-user-circle fa-fw"></i>n13eho</a></span>&nbsp;<span class=post-category>收录于 <a href=/categories/abrsim/><i class="far fa-folder fa-fw"></i>ABRsim</a></span></div>
+<div class=post-meta-line><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime=2023-03-24>2023-03-24</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 1283 字&nbsp;
+<i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 3 分钟&nbsp;<span id=/mahimahiformatandtransform/ class=leancloud_visitors data-flag-title=MAHIMAHI格式理解和转化逻辑>
 <i class="far fa-eye fa-fw"></i>&nbsp;<span class=leancloud-visitors-count></span>&nbsp;次阅读
 </span>&nbsp;</div>
 </div><div class="details toc" id=toc-static kept>
@@ -96,11 +96,66 @@
 </div>
 <div class="details-content toc-content" id=toc-content-static><nav id=TableOfContents>
 <ul>
-<li><a href=#你好哇>你好哇</a></li>
+<li><a href=#mahimahi格式正确解读>MAHIMAHI格式正确解读</a></li>
+<li><a href=#mahimahi-trace-file转化逻辑和代码以自定义的trace-log-file为例>MAHIMAHI trace file转化逻辑和代码，以自定义的trace log file为例</a></li>
+<li><a href=#关于最后的时间戳并不是原trace的finish_time的时间戳>关于最后的时间戳并不是原trace的finish_time的时间戳</a></li>
 </ul>
 </nav></div>
-</div><div class=content id=content><h2 id=你好哇>你好哇</h2>
-<p><img class=lazyload src=/svg/loading.min.svg data-src=https://nehopicbed.oss-cn-beijing.aliyuncs.com/img/202111221439080.png data-srcset="https://nehopicbed.oss-cn-beijing.aliyuncs.com/img/202111221439080.png, https://nehopicbed.oss-cn-beijing.aliyuncs.com/img/202111221439080.png 1.5x, https://nehopicbed.oss-cn-beijing.aliyuncs.com/img/202111221439080.png 2x" data-sizes=auto alt=https://nehopicbed.oss-cn-beijing.aliyuncs.com/img/202111221439080.png title=https://nehopicbed.oss-cn-beijing.aliyuncs.com/img/202111221439080.png></p>
+</div><div class=content id=content><h2 id=mahimahi格式正确解读>MAHIMAHI格式正确解读</h2>
+<blockquote>
+<p>Each line gives a timestamp in milliseconds (from the beginning of the
+trace) and represents an opportunity for one 1500-byte packet to be
+drained from the bottleneck queue and cross the link. If more than one
+MTU-sized packet can be transmitted in a particular millisecond, the
+same timestamp is repeated on multiple lines.</p>
+</blockquote>
+<p>（对啊明明写的是ms怎么后面就一点也不记得了）</p>
+<p>mahimahi文件中是一序列的整数，每一个整数代表网络模拟开始以来的时间戳，单位为milisecond毫秒ms，代表着这个时刻会向模拟网络链路中发送大小为1.5KB的数据包，也就是12Kb，这个大小就是MSS（<em>TCP连接建立时，收发双方协商通信时每一个报文段所能承载的最大数据长度</em>）
+例如一个速度为12Mbps的网络的mahimahi格式的trace即为：0, 1, 2, 3, 4, &mldr;。也就是分别在t=0、1、2、3、4ms的时刻发送了12Kb大小的包，那么反过来算就是12Kb/1ms = 12Mbps的速度了</p>
+<p>再例如一个内容为0, 1, 1, 1, 1的mahimahi格式trace file，这就代表着它在t=1ms的时刻发送了四个数据包，那么可计算其速度为4*12Kb/1ms = 48Mbps</p>
+<h2 id=mahimahi-trace-file转化逻辑和代码以自定义的trace-log-file为例>MAHIMAHI trace file转化逻辑和代码，以自定义的trace log file为例</h2>
+<p>代码直接来源是Pensieve仓库，<a href=https://github.com/hongzimao/pensieve/blob/master/traces/norway/convert_mahimahi_format.py target=_blank rel="noopener noreffer">traces文件夹下</a></p>
+<p>要点有3：</p>
+<ol>
+<li>
+<p>带宽计算的单位，包括秒s和毫秒ms、比特b和字节B的转化</p>
+</li>
+<li>
+<p>变量millisec_count会归0，他代表原trace中提供的带宽对应的一段时间，可以理解为以ms的粒度在走完一个receive time。因此每次跳出循环就是判断millisec_count是否超过了这个块的接收时间，如果已经超过了，就不继续写了</p>
+</li>
+<li>
+<p>变量millisec_time就是一直在递增的时刻，（它不重置0的），当满足条件时，就会写一个或者多个当前的milisec_time。这个条件就是to_send向下取整要大于0。算的上是核心逻辑了，下面展开说</p>
+</li>
+</ol>
+<p>to_send，表示要发送的数据包的个数，满1即发，它是这么计算的：</p>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span><span class=lnt>6
+</span><span class=lnt>7
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-python data-lang=python><span class=n>to_send</span> <span class=o>=</span> <span class=p>(</span><span class=n>millisec_count</span> <span class=o>*</span> <span class=n>pkt_per_millisec</span><span class=p>)</span> <span class=o>-</span> <span class=n>pkt_count</span>
+<span class=n>to_send</span> <span class=o>=</span> <span class=n>np</span><span class=o>.</span><span class=n>floor</span><span class=p>(</span><span class=n>to_send</span><span class=p>)</span>
+
+<span class=k>for</span> <span class=n>_</span> <span class=ow>in</span> <span class=nb>range</span><span class=p>(</span><span class=nb>int</span><span class=p>(</span><span class=n>to_send</span><span class=p>)):</span>
+    <span class=n>mf</span><span class=o>.</span><span class=n>write</span><span class=p>(</span><span class=nb>str</span><span class=p>(</span><span class=n>millisec_time</span><span class=p>)</span> <span class=o>+</span> <span class=s1>&#39;</span><span class=se>\n</span><span class=s1>&#39;</span><span class=p>)</span>
+    
+<span class=n>pkt_count</span> <span class=o>+=</span> <span class=n>to_send</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>其中，pkt_per_millisec = throughput / BYTES_PER_PKT，也就是当前这个throughput里，其实对应了多少个12Kb包，每一次随着milisec_cout增加就发一个包，直到发够一个单位1</p>
+<p>了然😊</p>
+<h2 id=关于最后的时间戳并不是原trace的finish_time的时间戳>关于最后的时间戳并不是原trace的finish_time的时间戳</h2>
+<p>我开始疑惑了好久，只有一行的话，都能对得上，也就是mahimahi的最后一个时间戳就是原trace 的finishtime（差不太远），但是一旦是多行，两边的时间就对不上了。仔细想想：转换代码里面每次进循环都只关注了tracefile中有吞吐量这一行，在开始时间到结束时间内，它确实可以正确表示，但是我一直忽略了，上一次的finish_time到下一次的start_time之间其实还有个idel_time！！！</p>
+<p>理论上讲这个idel_time期间是没有带宽的，或者说不可测，因为都没发送数据。但是mahimahi不会体现这个idel time，他可以说是把所有idel time都给压缩了，变成持续的反映带宽的时间戳。所以两边的时间戳对不上</p>
+<p>影响大吗？</p>
+<hr>
+<p>至此这个数据集转换因该是没问题了</p>
 </div><div class=post-footer id=post-footer>
 <div class=post-info>
 <div class=post-info-line>
@@ -112,21 +167,20 @@
 </div>
 <div class=post-info-line>
 <div class=post-info-md><span>
-<a class=link-to-markdown href=/helloworld/index.md target=_blank>阅读原始文档</a>
+<a class=link-to-markdown href=/mahimahiformatandtransform/index.md target=_blank>阅读原始文档</a>
 </span></div>
 <div class=post-info-share>
-<span><a href=javascript:void(0); title="分享到 Twitter" data-sharer=twitter data-url=https://neho.ink/helloworld/ data-title="Hello, world"><i class="fab fa-twitter fa-fw"></i></a><a href=javascript:void(0); title="分享到 Facebook" data-sharer=facebook data-url=https://neho.ink/helloworld/><i class="fab fa-facebook-square fa-fw"></i></a><a href=javascript:void(0); title="分享到 Hacker News" data-sharer=hackernews data-url=https://neho.ink/helloworld/ data-title="Hello, world"><i class="fab fa-hacker-news fa-fw"></i></a><a href=javascript:void(0); title="分享到 Line" data-sharer=line data-url=https://neho.ink/helloworld/ data-title="Hello, world"><i data-svg-src=https://cdn.jsdelivr.net/npm/simple-icons@2.14.0/icons/line.svg></i></a><a href=javascript:void(0); title="分享到 微博" data-sharer=weibo data-url=https://neho.ink/helloworld/ data-title="Hello, world"><i class="fab fa-weibo fa-fw"></i></a></span>
+<span><a href=javascript:void(0); title="分享到 Twitter" data-sharer=twitter data-url=https://neho.ink/mahimahiformatandtransform/ data-title=MAHIMAHI格式理解和转化逻辑 data-hashtags=mahimahi,仿真><i class="fab fa-twitter fa-fw"></i></a><a href=javascript:void(0); title="分享到 Facebook" data-sharer=facebook data-url=https://neho.ink/mahimahiformatandtransform/ data-hashtag=mahimahi><i class="fab fa-facebook-square fa-fw"></i></a><a href=javascript:void(0); title="分享到 Hacker News" data-sharer=hackernews data-url=https://neho.ink/mahimahiformatandtransform/ data-title=MAHIMAHI格式理解和转化逻辑><i class="fab fa-hacker-news fa-fw"></i></a><a href=javascript:void(0); title="分享到 Line" data-sharer=line data-url=https://neho.ink/mahimahiformatandtransform/ data-title=MAHIMAHI格式理解和转化逻辑><i data-svg-src=https://cdn.jsdelivr.net/npm/simple-icons@2.14.0/icons/line.svg></i></a><a href=javascript:void(0); title="分享到 微博" data-sharer=weibo data-url=https://neho.ink/mahimahiformatandtransform/ data-title=MAHIMAHI格式理解和转化逻辑><i class="fab fa-weibo fa-fw"></i></a></span>
 </div>
 </div>
 </div>
 <div class=post-info-more>
-<section class=post-tags></section>
+<section class=post-tags><i class="fas fa-tags fa-fw"></i>&nbsp;<a href=/tags/mahimahi/>mahimahi</a>,&nbsp;<a href=/tags/%E4%BB%BF%E7%9C%9F/>仿真</a></section>
 <section>
 <span><a href=javascript:void(0); onclick=window.history.back()>返回</a></span>&nbsp;|&nbsp;<span><a href=/>主页</a></span>
 </section>
 </div>
-<div class=post-nav>
-<a href=/dash.js-4.1.1%E7%9A%84%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE%E5%92%8C%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3/ class=next rel=next title="dash.js 4.1.1的环境配置和相关问题解决">dash.js 4.1.1的环境配置和相关问题解决<i class="fas fa-angle-right fa-fw"></i></a></div>
+<div class=post-nav><a href=/pensieve%E5%A4%8D%E7%8E%B0/ class=prev rel=prev title=Pensieve复现><i class="fas fa-angle-left fa-fw"></i>Pensieve复现</a></div>
 </div>
 <div id=comments><div id=valine class=comment></div><noscript>
 Please enable JavaScript to view the comments powered by <a href=https://valine.js.org/>Valine</a>.
